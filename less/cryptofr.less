@@ -10,6 +10,10 @@ body {
 	font-weight: normal;
 }
 
+.categories-title {
+	display: none;
+}
+
 .navbar-default {
     background-color: #30305C;
     border-color: #30305C;
@@ -36,6 +40,24 @@ body {
     max-height: 48px;
 }
 
+.unread-count:after {
+    position: absolute;
+    left: 25px;
+    top: 9px;
+    text-align: center;
+    border: 1px solid #FF5E00;
+    color: #fff;
+    min-width: 16px;
+    border-radius: 50px;
+    line-height: 14px;
+    background: #FF5E00;
+    padding: 1px 2px;
+    font-family: Barlow;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 11px;
+}
+
 
 /* categories */
 
@@ -51,6 +73,11 @@ body {
 			font-style: normal;
 			font-weight: 600;
 			font-size: 24px;
+    		line-height: 24px;
+
+    		a {
+    			color: #434A81;
+    		}
     	}
 
     	.icon, .category>ul>li .content .icon {
