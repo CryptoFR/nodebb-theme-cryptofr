@@ -27,6 +27,7 @@ body {
     .navbar-nav>li>a {
 	    color: #434A81;
 	    padding-left: 10px;
+    	padding-right: 10px;
 
 	    i {
 	    	background: white;
@@ -42,6 +43,13 @@ body {
 	    }
 	}
 
+	.navbar-nav>.active>a,
+	.navbar-nav>.active>a:focus,
+	.navbar-nav>.active>a:hover {
+	    color: #f55e03;
+	    background-color: #e9e9e8;
+	}
+
 	.btn-link {
 	    color: #fff;
 	    &:hover {
@@ -50,8 +58,19 @@ body {
 	}
 }
 
+@media (min-width: 768px) {
+	.navbar-default {
+		.navbar-nav>li>a {
+		    padding-top: 21px;
+		    padding-bottom: 21px;
+		}
+	}
+}
+
 .header .forum-logo {
-    max-height: 48px;
+    max-height: 46px;
+    margin-top: 13px;
+    margin-right: 15px;
 }
 
 .unread-count:after {

@@ -49,9 +49,7 @@
 					<!-- IF !config.disableChat -->
 					<li class="chats dropdown">
 						<a class="dropdown-toggle" data-toggle="dropdown" href="{relative_path}/user/{user.userslug}/chats" title="[[global:header.chats]]" id="chat_dropdown" component="chat/dropdown" data-ajaxify="false" role="button">
-							<i component="chat/icon" class="fad fa-comment-alt unread-count" data-content="{unreadCount.chat}">
-								<span component="chat/icon" class="unread-count" data-content="{unreadCount.chat}"></span>
-							</i> <span class="visible-xs-inline">[[global:header.chats]]</span>
+							<i component="chat/icon" class="fad fa-comment-alt unread-count" data-content="{unreadCount.chat}"></i> <span class="visible-xs-inline">[[global:header.chats]]</span>
 						</a>
 						<ul class="dropdown-menu" aria-labelledby="chat_dropdown">
 							<li>
