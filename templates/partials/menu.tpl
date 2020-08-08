@@ -101,12 +101,12 @@
 							<li role="presentation" class="divider"></li>
 							<li>
 								<a component="header/profilelink/edit" href="{relative_path}/user/{user.userslug}/edit">
-									<i class="fa fa-fw fa-edit"></i> <span>[[user:edit-profile]]</span>
+									<i class="fad fa-user-edit"></i> <span>[[user:edit-profile]]</span>
 								</a>
 							</li>
 							<li>
 								<a component="header/profilelink/settings" href="{relative_path}/user/{user.userslug}/settings">
-									<i class="fa fa-fw fa-gear"></i> <span>[[user:settings]]</span>
+									<i class="fad fa-user-cog"></i> <span>[[user:settings]]</span>
 								</a>
 							</li>
 							<!-- IF showModMenu -->
