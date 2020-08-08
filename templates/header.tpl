@@ -21,7 +21,7 @@
 	<!-- IF useCustomCSS -->
 	<style>{{customCSS}}</style>
 	<!-- END -->
-	<link rel="stylesheet" type="text/css" href="{relative_path}/assets/fontawesome-pro/css/duotone.css" />
+	<link rel="stylesheet" type="text/css" href="{relative_path}/assets/vendor/fontawesome-pro/css/duotone.css" />
 	
 </head>
 
