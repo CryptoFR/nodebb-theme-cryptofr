@@ -101,12 +101,12 @@
 							<li role="presentation" class="divider"></li>
 							<li>
 								<a component="header/profilelink/edit" href="{relative_path}/user/{user.userslug}/edit">
-									<i class="fa fa-fw fa-edit"></i> <span>[[user:edit-profile]]</span>
+									<i class="fad fa-user-edit"></i> <span>[[user:edit-profile]]</span>
 								</a>
 							</li>
 							<li>
 								<a component="header/profilelink/settings" href="{relative_path}/user/{user.userslug}/settings">
-									<i class="fa fa-fw fa-gear"></i> <span>[[user:settings]]</span>
+									<i class="fad fa-user-cog"></i> <span>[[user:settings]]</span>
 								</a>
 							</li>
 							<!-- IF showModMenu -->
@@ -167,7 +167,7 @@
 							<button id="search-button" type="button" class="btn btn-link"><i class="fa fa-search fa-fw" title="[[global:header.search]]"></i></button>
 							<div class="hidden" id="search-fields">
 								<div class="form-group">
-									<input autocomplete="off" type="text" class="form-control" placeholder="[[global:search]]" name="query" value="">
+									<input autocomplete="off" type="text" class="form-control search-form" placeholder="[[global:search]]" name="query" value="">
 									<a href="#"><i class="fa fa-gears fa-fw advanced-search-link"></i></a>
 								</div>
 								<button type="submit" class="btn btn-default hide">[[global:search]]</button>
