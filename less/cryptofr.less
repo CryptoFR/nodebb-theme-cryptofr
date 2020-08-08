@@ -165,18 +165,28 @@ body {
     	background: #f1f3f9;
     }
 
+    &.unread {
+    	small {
+		    color: #FF5E00;
+		}
+		.categories>li .category-children .category-children-item.unread .fad {
+		    color: #FF5E00 !important;
+		}
+    }
+
 	div.icon {
-	    width: auto !important;
-	    height: auto !important;
-	    font-size: 16px !important;
+	    font-size: 16px!important;
 	    text-align: center;
-	    line-height: 28px;
 	    display: inline-block;
 	    margin-right: 7px;
-	    padding: 0px;
+	    padding: 0;
+	    margin-top: 5px;
+	    height: 19px !important;
+	    width: 19px !important;
+	    background-size: cover !important;
 	}
 	small {
-	    color: #434a81!important;
+	    color: #434a81;
 	    line-height: 30px;
 	}
 }
