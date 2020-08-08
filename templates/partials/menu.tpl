@@ -114,17 +114,17 @@
 							<li class="dropdown-header">[[pages:moderator-tools]]</li>
 							<li>
 								<a href="{relative_path}/flags">
-									<i class="fa fa-fw fa-flag"></i> <span>[[pages:flagged-content]]</span>
+									<i class="fad fa-pennant"></i> <span>[[pages:flagged-content]]</span>
 								</a>
 							</li>
 							<li>
 								<a href="{relative_path}/post-queue">
-									<i class="fa fa-fw fa-list-alt"></i> <span>[[pages:post-queue]]</span>
+									<i class="fad fa-stream"></i> <span>[[pages:post-queue]]</span>
 								</a>
 							</li>
 							<li>
 								<a href="{relative_path}/ip-blacklist">
-									<i class="fa fa-fw fa-ban"></i> <span>[[pages:ip-blacklist]]</span>
+									<i class="fad fa-user-slash"></i> <span>[[pages:ip-blacklist]]</span>
 								</a>
 							</li>
 							<!-- ENDIF showModMenu -->
@@ -134,7 +134,7 @@
 									<input type="hidden" name="_csrf" value="{config.csrf_token}">
 									<input type="hidden" name="noscript" value="true">
 									<button type="submit" class="btn btn-link">
-										<i class="fa fa-fw fa-sign-out"></i><span> [[global:logout]]</span>
+										<i class="fad fa-sign-out"></i><span> [[global:logout]]</span>
 									</button>
 								</form>
 							</li>
