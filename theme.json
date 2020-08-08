@@ -1,7 +1,7 @@
 {
-    "id": "nodebb-theme-persona",
-    "name": "Persona",
-    "description": "The default theme for NodeBB. Uses a standard approach to forum design.",
-    "url": "https://github.com/psychobunny/nodebb-theme-persona",
+    "id": "nodebb-theme-cryptofr",
+    "name": "CryptoFR",
+    "description": "CryptoFR theme. Better design and changes 'reddit like'.",
+    "url": "https://github.com/psychobunny/nodebb-theme-cryptofr",
     "screenshot": "screenshot.png"
 }

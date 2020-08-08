@@ -1,14 +1,14 @@
 {
-  "name": "nodebb-theme-persona",
+  "name": "nodebb-theme-cryptofr",
   "version": "10.2.5",
   "nbbpm": {
     "compatibility": "^1.14.0"
   },
-  "description": "Persona theme for NodeBB",
+  "description": "CryptoFR new theme for NodeBB",
   "main": "theme.less",
   "repository": {
     "type": "git",
-    "url": "https://github.com/psychobunny/nodebb-theme-persona"
+    "url": "https://github.com/cryptofr/nodebb-theme-cryptofrv2"
   },
   "keywords": [
     "nodebb",
@@ -32,11 +32,16 @@
       "name": "Barış Soner Uşaklı",
       "email": "baris@designcreateplay.com",
       "url": "https://github.com/barisusakli"
+    },
+    {
+      "name": "ffmad",
+      "email": "admin@cryptofr.com",
+      "url": "https://github.com/ffmad"
     }
   ],
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/psychobunny/nodebb-theme-persona/issues"
+    "url": "https://github.com/cryptofr/nodebb-theme-cryptofrv2/issues"
   },
   "dependencies": {
     "pulling": "^2.0.0",
