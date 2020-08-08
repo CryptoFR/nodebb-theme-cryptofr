@@ -21,6 +21,8 @@
 	<!-- IF useCustomCSS -->
 	<style>{{customCSS}}</style>
 	<!-- END -->
+	<link rel="stylesheet" type="text/css" href="{relative_path}/node_modules/@fortawesome/fontawesome-pro/css/duotone.css" />
+	
 </head>
 
 <body class="{bodyClass} skin-<!-- IF bootswatchSkin -->{bootswatchSkin}<!-- ELSE -->noskin<!-- END -->">
