@@ -101,15 +101,16 @@ body {
 
 .unread-count:after {
     position: absolute;
-    left: 25px;
-    top: 9px;
+    left: 27px;
+    top: 15px;
     text-align: center;
-    border: 1px solid #FF5E00;
+    border: 1px solid #ff5e00;
     color: #fff;
-    min-width: 16px;
+    width: 18px;
+    height: 18px;
     border-radius: 50px;
     line-height: 14px;
-    background: #FF5E00;
+    background: #ff5e00;
     padding: 1px 2px;
     font-family: Barlow;
     font-style: normal;
@@ -125,6 +126,8 @@ body {
     padding-bottom: 10px;
     min-height: 53px;
     background: #FAFAFA;
+    display: flex;
+    align-items: stretch;
 
     .description {
 	    margin-left: 62px;
@@ -147,13 +150,34 @@ body {
 	    text-align: center;
 	    color: #434A81;
 	}
-	.stats small {
-	    text-transform: uppercase;
-	    font-family: Poppins;
-	    font-style: normal;
-	    font-weight: 400;
-	    font-size: 12px;
-	    color: rgba(0, 0, 0, 0.6);
+	.stats {
+		align-self: center;
+		small {
+		    text-transform: uppercase;
+		    font-family: Poppins;
+		    font-style: normal;
+		    font-weight: 400;
+		    font-size: 12px;
+		    color: rgba(0, 0, 0, 0.6);
+		}
+	}
+
+	.teaser {
+	    background: #E9EBF2;
+	    margin-top: -10px;
+	    margin-bottom: -10px;
+	    padding-left: 0px;
+	    margin-left: 20px;
+
+	    .card {
+		    border-left: 2px solid #ccc;
+		    text-align: left;
+		    margin-top: 0px;
+		    overflow: hidden;
+		    height: 100%;
+		    font-size: 12px;
+		    line-height: 14px;
+		}
 	}
 
     .content {
