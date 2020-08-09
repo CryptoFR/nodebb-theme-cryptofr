@@ -3,17 +3,19 @@
 	<!-- IF @first -->
 	<div component="category/posts" class="last-post" data-timestamp="{../timestamp}">
 		<p class="permalink-wrapper">
-			<a class="permalink category-link" href="{config.relative_path}/topic/{../topic.slug}<!-- IF ../index -->/{../index}<!-- ENDIF ../index -->">
+			<a class="permalink category-link post-title" href="{config.relative_path}/topic/{../topic.slug}<!-- IF ../index -->/{../index}<!-- ENDIF ../index -->">
 				{../topic.title}
 			</a>
 		</p>
 		<p class="hidden-xs user-wrapper">
 			<a class="timeago hidden-xs" title="{../timestampISO}" href="{config.relative_path}/topic/{../topic.slug}<!-- IF ../index -->/{../index}<!-- ENDIF ../index -->"></a>
 			par
-			{buildAvatar(posts.user, "sm", true)}
-			<a class="user" href="user/{../user.userslug}">
-				{../user.username}
-			</a>
+			<span class="username">
+				{buildAvatar(posts.user, "sm", true)}
+				<a class="user" href="user/{../user.userslug}">
+					{../user.username}
+				</a>
+			</span>
 		</p>
 	</div>
 	<!-- ENDIF @first -->

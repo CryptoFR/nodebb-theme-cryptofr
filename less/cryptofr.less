@@ -184,6 +184,13 @@ body {
 		}
 	}
 
+	.teaser.unread {
+
+		.card {
+    		border-color: #f55e03ab!important;
+    	}
+	}
+
     .content {
     	h2 {
     		font-family: Barlow;
@@ -285,10 +292,10 @@ ul.categories [data-cid="2"], ul.categories [data-cid="25"], ul.categories [data
     padding-top: 56px;
 }
 ul.categories [data-cid="2"]:before, ul.categories [data-cid="25"]:before, ul.categories [data-cid="44"]:before, ul.categories [data-cid="71"]:before, ul.categories [data-cid="96"]:before {
-    color: #434A81;
+    color: #434a81;
     display: block;
-    position: relative;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    position: absolute;
+    border-bottom: 1px solid rgba(0,0,0,.08);
     text-align: left;
     padding-left: 80px;
     text-transform: uppercase;
@@ -297,9 +304,10 @@ ul.categories [data-cid="2"]:before, ul.categories [data-cid="25"]:before, ul.ca
     font-weight: 600;
     font-size: 22px;
     line-height: 45px;
-    padding-bottom: 0px;
+    padding-bottom: 0;
     margin-bottom: 12px;
-    margin-top: -10px;
+    margin-top: -56px;
+    width: 100%;
     border-top-right-radius: 6px;
     border-top-left-radius: 6px;
 }
