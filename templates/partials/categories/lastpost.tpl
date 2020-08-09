@@ -1,16 +1,20 @@
 <div class="card" style="border-color: {../bgColor}">
 	{{{each ./posts}}}
 	<!-- IF @first -->
-	<div component="category/posts">
-		<p>
-			<a href="{config.relative_path}/user/{../user.userslug}">{buildAvatar(posts.user, "sm", true)}</a>
-			<a class="permalink" href="{config.relative_path}/topic/{../topic.slug}<!-- IF ../index -->/{../index}<!-- ENDIF ../index -->">
-				<small class="timeago" title="{../timestampISO}"></small>
+	<div component="category/posts" class="last-post" data-timestamp="{../timestamp}">
+		<p class="permalink-wrapper">
+			<a class="permalink category-link" href="{config.relative_path}/topic/{../topic.slug}<!-- IF ../index -->/{../index}<!-- ENDIF ../index -->">
+				{../topic.title}
 			</a>
 		</p>
-		<div class="post-content">
-			{../content}
-		</div>
+		<p class="hidden-xs user-wrapper">
+			<a class="timeago hidden-xs" title="{../timestampISO}" href="{config.relative_path}/topic/{../topic.slug}<!-- IF ../index -->/{../index}<!-- ENDIF ../index -->"></a>
+			par
+			{buildAvatar(posts.user, "sm", true)}
+			<a class="user" href="user/{../user.userslug}">
+				{../user.username}
+			</a>
+		</p>
 	</div>
 	<!-- ENDIF @first -->
 	{{{end}}}
