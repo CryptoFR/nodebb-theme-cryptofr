@@ -126,6 +126,36 @@ body {
     min-height: 53px;
     background: #FAFAFA;
 
+    .description {
+	    margin-left: 62px;
+	    font-family: Poppins;
+	    font-style: normal;
+	    font-weight: normal;
+	    font-size: 12px;
+	    line-height: 16px;
+	    display: flex;
+	    letter-spacing: 0.4px;
+	    color: rgba(0, 0, 0, 0.6);
+	}
+
+    .human-readable-number {
+	    font-family: Barlow;
+	    font-style: normal;
+	    font-weight: 600;
+	    font-size: 21px;
+	    align-items: center;
+	    text-align: center;
+	    color: #434A81;
+	}
+	.stats small {
+	    text-transform: uppercase;
+	    font-family: Poppins;
+	    font-style: normal;
+	    font-weight: 400;
+	    font-size: 12px;
+	    color: rgba(0, 0, 0, 0.6);
+	}
+
     .content {
     	h2 {
     		font-family: Barlow;
@@ -169,7 +199,7 @@ body {
     	small {
 		    color: #FF5E00;
 		}
-		.categories>li .category-children .category-children-item.unread .fad {
+		.fad {
 		    color: #FF5E00 !important;
 		}
     }
@@ -191,6 +221,58 @@ body {
 	}
 }
 
+ul.categories [data-cid="2"]:before {
+    content: "General";
+    background: #fafafa url(https://i.gyazo.com/f75851bd33471b78daa69541791a2ee1.png) no-repeat 22px center;
+}
+ul.categories [data-cid="96"]:before {
+    content: "AssoCryptoFR";
+    background: #fafafa url(https://i.gyazo.com/507c5adc7da96ea17e16af20f8721529.png) no-repeat 19px center;
+}
+ul.categories [data-cid="71"]:before {
+    content: "Bitcoin";
+    background: #fafafa url(https://i.gyazo.com/16020bc2aa69b5a5f3cb853e8e770764.png) no-repeat 24px center;
+}
+ul.categories [data-cid="44"]:before {
+    content: "Ethereum";
+    background: #fafafa url(https://i.gyazo.com/bd243b6c1636bfce54fa957c676af1b0.png) no-repeat 32px center;
+}
+ul.categories [data-cid="25"]:before {
+    content: "Cryptomonnaies & Blockchains";
+    background: #fafafa url(https://i.gyazo.com/1d6b582fa9edc18a22e105bea526db2b.png) no-repeat 23px center;
+}
 
+ul.categories [data-cid="103"], ul.categories [data-cid="18"], ul.categories [data-cid="73"], ul.categories [data-cid="94"], ul.categories [data-cid="27"], ul.categories [data-cid="36"] {
+    border-bottom-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+ul.categories [data-cid="1"] {
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+ul.categories [data-cid="2"], ul.categories [data-cid="25"], ul.categories [data-cid="44"], ul.categories [data-cid="71"], ul.categories [data-cid="96"] {
+    margin-top: 25px;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
+ul.categories [data-cid="2"]:before, ul.categories [data-cid="25"]:before, ul.categories [data-cid="44"]:before, ul.categories [data-cid="71"]:before, ul.categories [data-cid="96"]:before {
+    color: #434A81;
+    display: block;
+    position: relative;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+    text-align: left;
+    padding-left: 80px;
+    text-transform: uppercase;
+    font-family: Barlow;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 45px;
+    padding-bottom: 0px;
+    margin-bottom: 12px;
+    margin-top: -10px;
+    border-top-right-radius: 6px;
+    border-top-left-radius: 6px;
+}
 
 
