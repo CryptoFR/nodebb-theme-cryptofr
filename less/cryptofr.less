@@ -383,6 +383,7 @@ ul.categories [data-cid="2"]:before, ul.categories [data-cid="25"]:before, ul.ca
     width: 100%;
     border-top-right-radius: 6px;
     border-top-left-radius: 6px;
+    border-right: 1px solid #dedede;
 }
 
 ul.categories [data-cid="1"],
@@ -399,4 +400,33 @@ ul.categories [data-cid="51"],
 ul.categories [data-cid="72"],
 ul.categories [data-cid="29"]{
     border-bottom: 1px solid rgba(0,0,0,0.04);
+}
+
+/* Widgets */
+
+.panel {
+	.panel-default {
+	    border-radius: 5px;
+	    border-color: #dedede;
+
+	    .panel-heading {
+		    color: #434981;
+		    background-color: #fafafa;
+		    border-color: #dedede;
+		    border-top-left-radius: 5px;
+		    border-top-right-radius: 5px;
+
+		    .panel-title {
+			    font-family: Barlow;
+			    font-style: normal;
+			    font-weight: 500;
+			    font-size: 15px;
+			}
+		}
+		.panel-body {
+		    background: #fafafa;
+		    border-bottom-left-radius: 5px;
+    		border-bottom-right-radius: 5px;
+		}
+	}
 }
