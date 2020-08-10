@@ -8,7 +8,7 @@
 			<span class="human-readable-number" title="{topics.votes}">{topics.votes}</span><br />
 		</div>
 
-		<div class="col-md-5 col-sm-9 col-xs-10 content">
+		<div class="col-md-6 col-sm-9 col-xs-10 content">
 			<div class="avatar pull-left">
 				<!-- IF showSelect -->
 				<div class="select" component="topic/select">
@@ -78,11 +78,10 @@
 		<div class="col-md-1 hidden-sm hidden-xs stats stats-postcount">
 			<span class="human-readable-number" title="{topics.postcount}">{topics.postcount}</span><br />
 			<small>[[global:posts]]</small>
-		</div>
-
-		<div class="col-md-1 hidden-sm hidden-xs stats stats-viewcount">
-			<span class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</span><br />
-			<small>[[global:views]]</small>
+			<span class="stats-viewcount">
+				<i class="fad fa-eye"></i>
+				<span class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</span>
+			</span>
 		</div>
 
 		<div class="col-md-4 col-sm-3 teaser hidden-xs" component="topic/teaser">
