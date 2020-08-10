@@ -32,11 +32,10 @@
 
 		<hr class="hidden-xs" />
 
-		<p class="hidden-xs">{name}</p>
+		<div class="hidden-xs category-title">Catégorie : {name}</div>
 
 		<!-- IF !topics.length -->
 		<!-- IF privileges.topics:create -->
-		<hr class="visible-xs" />
 		<div class="alert alert-warning" id="category-no-topics">
 			[[category:no_topics]]
 		</div>
