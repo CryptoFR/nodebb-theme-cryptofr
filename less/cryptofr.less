@@ -445,4 +445,50 @@ footer.container {
     background: #30315c;
     color: white;
     width: 100%;
+    .copyright {
+    	padding-bottom: 0px;
+    	a {
+    		color: #f08f69;
+    		&:hover {
+    			color: #f3a485;
+    		}
+    	}
+    }
+}
+
+/***********************************
+
+           Categories
+
+***********************************/
+
+.breadcrumb {
+    font-size: 13px;
+    line-height: 16px;
+    letter-spacing: 0.4px;
+    color: #525C96;
+    >.active {
+    	color: #30315c;
+    }
+    a {
+    	color: rgba(0, 0, 0, 0.54);
+    	&:hover {
+    		color: #30315c;
+    	}
+    }
+    >li+li:before {
+	    color: rgba(0, 0, 0, 0.54);
+	}
+}
+
+.subcategory {
+	.categories>li {
+	    border-bottom: 1px solid rgba(0,0,0,.04);
+	    margin-left: 0px;
+    	margin-right: 0px;
+
+	    &:last-child {
+	    	border-bottom: none;
+	    }
+	}
 }
