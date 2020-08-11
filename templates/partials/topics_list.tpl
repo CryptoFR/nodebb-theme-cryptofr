@@ -6,7 +6,7 @@
 
 		<div class="col-md-1 stats stats-votes">
 			<span class="human-readable-number <!-- IF topics.pinned -->hide<!-- ENDIF topics.pinned -->" title="{topics.votes}">{topics.votes}</span>
-			<span class="pinned<!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="{topics.votes}"><i class="fad fa-thumbtack"></i></span>
+			<span class="pinned <!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="{topics.votes}"><i class="fad fa-thumbtack"></i></span>
 		</div>
 
 		<div class="col-md-6 col-sm-9 col-xs-10 content">

@@ -518,6 +518,16 @@ footer.container {
     margin-right: 0px;
     border-bottom: 1px solid rgba(0,0,0,.04) !important;
 
+    &.pinned-topic {
+	    background: #eaebf2 !important;
+	    .ui-sortable-handle {
+	    	margin-left: -5px;
+	    	&::before {
+			    display: none;
+			}
+	    }
+	}
+
     .teaser {
 	    max-height: 75px !important;
 	}
