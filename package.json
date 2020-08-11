@@ -42,10 +42,5 @@
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "https://github.com/cryptofr/nodebb-theme-cryptofrv2/issues"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-pro": "^5.14.0",
-    "pulling": "^2.0.0",
-    "striptags": "^3.1.1"
   }
 }

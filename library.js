@@ -3,6 +3,7 @@
 var striptags = require('striptags');
 var meta = require.main.require('./src/meta');
 var user = require.main.require('./src/user');
+var posts = require.main.require('./src/posts');
 
 var library = {};
 
@@ -12,6 +13,29 @@ library.init = function(params, callback) {
 
 	app.get('/admin/plugins/persona', middleware.admin.buildHeader, renderAdmin);
 	app.get('/api/admin/plugins/persona', renderAdmin);
+
+	const votePost = function (req, res) {
+		var toPid = req.body.toPid,
+		  isUpvote = JSON.parse(req.body.isUpvote),
+		  uid = req.user ? req.user.uid : 0;
+		const fn = isUpvote ? 'upvote' : 'unvote';
+		posts[fn](toPid, uid, function (err, result) {
+		  res.json({ error: err && err.message, result: result });
+		});
+	  };
+	
+	const downvotePost = function (req, res) {
+		var toPid = req.body.toPid,
+		  isDownvote = JSON.parse(req.body.isDownvote),
+		  uid = req.user ? req.user.uid : 0;
+		const fn = isDownvote ? 'downvote' : 'unvote';
+		posts[fn](toPid, uid, function (err, result) {
+		  res.json({ error: err && err.message, result: result });
+		});
+	  };
+
+	app.post('/cryptofrv2/vote', votePost);
+	app.post('/cryptofrv2/downvote', downvotePost);
 
 	callback();
 };
