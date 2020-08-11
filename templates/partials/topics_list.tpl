@@ -5,12 +5,12 @@
 		<meta itemprop="name" content="{function.stripTags, title}">
 
 		<div class="col-md-1 stats stats-votes">
-			<span class="human-readable-number <!-- IF topics.pinned -->hide<!-- ENDIF topics.pinned -->" title="{topics.votes}">
+			<span class="<!-- IF topics.pinned -->hide<!-- ENDIF topics.pinned -->" title="{topics.votes}">
 				<a href="#" class="<!-- IF topics.upvoted -->upvoted<!-- ENDIF topics.upvoted -->">
 					<i class="fa fa-chevron-up"></i>
 				</a>
 
-				{topics.upvotes - topics.downvotes}
+				{topics.votes}
 			</span>
 			<span class="pinned <!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="{topics.votes}"><i class="fad fa-thumbtack"></i></span>
 		</div>
