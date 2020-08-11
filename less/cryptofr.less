@@ -521,17 +521,27 @@ footer.container {
     &.pinned-topic {
 	    background: #eaebf2 !important;
 	    .ui-sortable-handle {
-	    	margin-left: -5px;
+	    	margin-left: -4px;
 	    	&::before {
 			    display: none;
 			}
 	    }
 	}
 
+	&.unread {
+		background: #fffbf6;
+		.teaser .card {
+		    border-color: #f55e03ab!important;
+		}
+	}
+
 	.content {
 		padding: 0;
 		.topic-title {
 			font-size: 18px;
+			&:hover {
+				color: #7e85bf;
+			}
 		}
 		.tag-list .tag {
 		    background: #e2e2e2;
@@ -553,6 +563,14 @@ footer.container {
 
     .teaser {
 	    max-height: 75px !important;
+	}
+
+	.stats-vote {
+		.pinned i {
+		    transform: rotate(-45deg);
+		    color: #30315c;
+		    font-size: 25px;
+		}
 	}
 
 	.stats-postcount {
