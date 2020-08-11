@@ -566,10 +566,37 @@ footer.container {
 	}
 
 	.stats-votes {
+		padding: 0px;
+    	margin: -6px -5px;
 		.pinned i {
 		    transform: rotate(-45deg);
 		    color: #30315c;
 		    font-size: 25px;
+		}
+
+		.voting {
+		    display: flex;
+		    flex-direction: column;
+		    font-family: Poppins;
+		    font-size: 18px;
+		    color: #434A81;
+
+		    .downvote, .upvote {
+			    color: rgba(0, 0, 0, 0.38);
+			    font-size: 35px;
+			    margin-top: -7px;
+			    margin-bottom: -6px;
+		    }
+		    .upvote {
+		    	&:hover {
+		    		color: #405bab;
+		    	}
+		    }
+		    .downvote {
+		    	&:hover {
+		    		color: #d23030;
+		    	}
+		    }
 		}
 	}
 
