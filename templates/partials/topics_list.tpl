@@ -5,16 +5,12 @@
 		<meta itemprop="name" content="{function.stripTags, title}">
 
 		<div class="col-md-1 stats stats-votes">
-			<span class="human-readable-number <!-- IF topics.pinned -->hide<!-- ENDIF topics.pinned -->" title="{topics.votes}">{topics.votes}
-				<a component="post/upvote" href="#" class="<!-- IF topics.upvoted -->upvoted<!-- ENDIF topics.upvoted -->">
-					<i class="fad fa-chevron-up"></i>
+			<span class="human-readable-number <!-- IF topics.pinned -->hide<!-- ENDIF topics.pinned -->" title="{topics.votes}">
+				<a href="#" class="<!-- IF topics.upvoted -->upvoted<!-- ENDIF topics.upvoted -->">
+					<i class="fa fa-chevron-up"></i>
 				</a>
 
-				<span component="post/vote-count" data-votes="{topics.votes}">{topics.votes}</span>
-
-				<a component="post/downvote" href="#" class="<!-- IF topics.downvoted -->downvoted<!-- ENDIF topics.downvoted -->">
-					<i class="fad fa-chevron-down"></i>
-				</a>
+				{topics.upvotes - topics.downvotes}
 			</span>
 			<span class="pinned <!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="{topics.votes}"><i class="fad fa-thumbtack"></i></span>
 		</div>
