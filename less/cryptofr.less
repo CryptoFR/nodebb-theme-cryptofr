@@ -81,6 +81,10 @@ body {
 	#user_dropdown {
 	    padding: 20px 15px;
 	}
+
+	.pagination-block .progress-container {
+	    left: 16px;
+	}
 }
 
 #search-form { 
@@ -158,6 +162,11 @@ body {
     border-left: 1px solid #dedede;
     border-right: 1px solid #dedede;
 
+    .content img.emoji {
+    	height: inherit;
+    	width: inherit;
+    }
+
     .description {
 	    margin-left: 62px;
 	    font-family: Poppins;
@@ -196,7 +205,7 @@ body {
 	    margin-top: -10px;
 	    margin-bottom: -10px;
 	    padding-left: 0px;
-	    margin-left: 20px;
+	    margin-left: 30px;
 	    margin-right: -1px;
 
 	    .card {
@@ -507,8 +516,24 @@ footer.container {
 .topic-list li {
     margin-left: 0px;
     margin-right: 0px;
+    border-bottom: 1px solid rgba(0,0,0,.04) !important;
 
     .teaser {
 	    max-height: 75px !important;
+	}
+
+	.stats-viewcount {
+	    font-size: 14px !important;
+	    display: flex;
+	    float: right;
+	    position: absolute;
+	    top: -15px;
+	    right: -25px;
+	    align-items: center;
+	    .human-readable-number {
+		    font-size: 13px!important;
+		    margin-left: 3px;
+		    font-weight: 400 !important;
+		}
 	}
 }
