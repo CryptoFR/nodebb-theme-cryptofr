@@ -7,13 +7,13 @@
 		<div class="col-md-1 stats stats-votes">
 			<span class="voting <!-- IF topics.pinned -->hide<!-- ENDIF topics.pinned -->" title="{topics.votes}">
 				<a href="#" class="upvote <!-- IF topics.upvoted -->upvoted<!-- ENDIF topics.upvoted -->">
-					<i class="fad fa-chevron-up"></i>
+					<i class="fad fa-angle-up"></i>
 				</a>
 
 				{topics.votes}
 
 				<a href="#" class="downvote <!-- IF topics.downvoted -->downvoted<!-- ENDIF topics.downvoted -->">
-					<i class="fad fa-chevron-down"></i>
+					<i class="fad fa-angle-down"></i>
 				</a>
 			</span>
 			<span class="pinned <!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="{topics.votes}"><i class="fad fa-thumbtack"></i></span>
