@@ -533,10 +533,30 @@ footer.container {
 		.topic-title {
 			font-size: 18px;
 		}
+		.tag-list .tag {
+		    background: #e2e2e2;
+		    border-radius: 16px;
+		    font-family: Poppins;
+		    font-style: normal;
+		    font-weight: normal;
+		    text-align: center;
+		    letter-spacing: 0.25px;
+		    color: #6A74A4;
+		    padding: 3px 6px;
+
+		    &:hover {
+			    background: #bfbfbf;
+			    color: #465498;
+		    }
+		}
 	}
 
     .teaser {
 	    max-height: 75px !important;
+	}
+
+	.stats-postcount {
+	    padding-left: 0px;
 	}
 
 	.stats-viewcount {
@@ -545,7 +565,7 @@ footer.container {
 	    float: right;
 	    position: absolute;
 	    top: -15px;
-	    right: -25px;
+	    right: -22px;
 	    align-items: center;
 	    .human-readable-number {
 		    font-size: 13px!important;
