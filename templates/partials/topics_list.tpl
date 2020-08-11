@@ -40,9 +40,9 @@
 				{{{each icons}}}@value{{{end}}}
 
 				<!-- IF !topics.noAnchor -->
-				<a href="{config.relative_path}/topic/{topics.slug}<!-- IF topics.bookmark -->/{topics.bookmark}<!-- ENDIF topics.bookmark -->" itemprop="url">{topics.title}</a><br />
+				<a href="{config.relative_path}/topic/{topics.slug}<!-- IF topics.bookmark -->/{topics.bookmark}<!-- ENDIF topics.bookmark -->" class="topic-title" itemprop="url">{topics.title}</a><br />
 				<!-- ELSE -->
-				<span>{topics.title}</span><br />
+				<span class="topic-title">{topics.title}</span><br />
 				<!-- ENDIF !topics.noAnchor -->
 
 				<!-- IF !template.category -->
