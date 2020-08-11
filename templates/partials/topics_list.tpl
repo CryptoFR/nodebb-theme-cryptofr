@@ -1,11 +1,12 @@
 <ul component="category" class="topic-list" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
 	<meta itemprop="itemListOrder" content="descending">
 	{{{each topics}}}
-	<li component="category/topic" class="row clearfix category-item {function.generateTopicClass}" <!-- IMPORT partials/data/category.tpl -->>
+	<li component="category/topic" class="row clearfix category-item {function.generateTopicClass} <!-- IF topics.pinned -->pinned-topic<!-- ENDIF topics.pinned -->" <!-- IMPORT partials/data/category.tpl -->>
 		<meta itemprop="name" content="{function.stripTags, title}">
 
-		<div class="col-md-1 hidden-sm hidden-xs stats stats-votes">
-			<span class="human-readable-number" title="{topics.votes}">{topics.votes}</span><br />
+		<div class="col-md-1 stats stats-votes">
+			<span class="human-readable-number <!-- IF topics.pinned -->hide<!-- ENDIF topics.pinned -->" title="{topics.votes}">{topics.votes}</span>
+			<span class="pinned<!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="{topics.votes}"><i class="fad fa-thumbtack"></i></span>
 		</div>
 
 		<div class="col-md-6 col-sm-9 col-xs-10 content">
