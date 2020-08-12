@@ -32,7 +32,7 @@
 
 		<hr class="hidden-xs" />
 
-		<div class="hidden-xs category-title">Catégorie : {name}</div>
+		<div class="hidden-xs category-title">Catégorie <i class="fad fa-arrow-from-left"></i> {name}</div>
 
 		<!-- IF !topics.length -->
 		<!-- IF privileges.topics:create -->
