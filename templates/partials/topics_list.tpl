@@ -105,16 +105,6 @@
 				</p>
 				<!-- ELSE -->
 				<!-- IF topics.teaser.pid -->
-				<p>
-					<a href="{config.relative_path}/user/{topics.teaser.user.userslug}">{buildAvatar(topics.teaser.user, "24", true, "not-responsive")}</a>
-					<a class="permalink" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
-						<span class="timeago" title="{topics.teaser.timestampISO}"></span>
-					</a>
-				</p>
-				<div class="post-content">
-					{topics.teaser.content}
-				</div>
-
 				<p class="permalink-wrapper">
 					<a class="permalink category-link content" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
 						{topics.teaser.content}
