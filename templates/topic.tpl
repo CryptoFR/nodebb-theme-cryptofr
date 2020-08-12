@@ -31,8 +31,6 @@
 
 		<!-- IMPORT partials/topic/deleted-message.tpl -->
 
-		<hr class="visible-xs" />
-
 		<ul component="topic" class="posts" data-tid="{tid}" data-cid="{cid}">
 			{{{each posts}}}
 				<li component="post" class="<!-- IF !posts.index -->first-post<!-- ENDIF !posts.index --><!-- IF posts.deleted -->deleted<!-- ENDIF posts.deleted -->" <!-- IMPORT partials/data/topic.tpl -->>
