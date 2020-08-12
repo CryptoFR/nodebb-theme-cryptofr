@@ -28,7 +28,7 @@
 					<!-- ELSE -->
 					{buildAvatar(topics.user, "46", true, "not-responsive")}
 					<!-- ENDIF topics.thumb -->
-					<i class="fa fa-check"></i>
+					<i class="fad fa-check"></i>
 				</div>
 				<!-- ENDIF showSelect -->
 
@@ -44,9 +44,9 @@
 			</div>
 
 			<h2 component="topic/header" class="title">
-				<i component="topic/pinned" class="fa fa-thumb-tack <!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="[[topic:pinned]]"></i>
-				<i component="topic/locked" class="fa fa-lock <!-- IF !topics.locked -->hide<!-- ENDIF !topics.locked -->" title="[[topic:locked]]"></i>
-				<i component="topic/moved" class="fa fa-arrow-circle-right <!-- IF !topics.oldCid -->hide<!-- ENDIF !topics.oldCid -->" title="[[topic:moved]]"></i>
+				<i component="topic/pinned" class="<!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="[[topic:pinned]]"></i>
+				<i component="topic/locked" class="fad fa-lock <!-- IF !topics.locked -->hide<!-- ENDIF !topics.locked -->" title="[[topic:locked]]"></i>
+				<i component="topic/moved" class="fad fa-arrow-alt-circle-right <!-- IF !topics.oldCid -->hide<!-- ENDIF !topics.oldCid -->" title="[[topic:moved]]"></i>
 				{{{each icons}}}@value{{{end}}}
 
 				<!-- IF !topics.noAnchor -->
