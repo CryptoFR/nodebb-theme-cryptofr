@@ -105,21 +105,23 @@
 				</p>
 				<!-- ELSE -->
 				<!-- IF topics.teaser.pid -->
-				<p class="permalink-wrapper">
-					<a class="permalink category-link content" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
-						{topics.teaser.content}
-					</a>
-				</p>
-				<p class="hidden-xs user-wrapper">
-					<a class="timeago hidden-xs" title="{../timestampISO}" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"></a>
-					par
-					<span class="username">
-						{buildAvatar(topics.teaser.user, "24", true, "not-responsive")}
-						<a class="user" href="user/{../topics.teaser.user.userslug}">
-							{../topics.teaser.user.username}
+				<div class="teaser-wrapper">
+					<p class="permalink-wrapper">
+						<a class="permalink category-link content" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
+							{topics.teaser.content}
 						</a>
-					</span>
-				</p>
+					</p>
+					<p class="hidden-xs user-wrapper">
+						<a class="timeago hidden-xs" title="{../timestampISO}" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"></a>
+						par
+						<span class="username">
+							{buildAvatar(topics.teaser.user, "24", true, "not-responsive")}
+							<a class="user" href="user/{../topics.teaser.user.userslug}">
+								{../topics.teaser.user.username}
+							</a>
+						</span>
+					</p>
+				</div>
 				<!-- ENDIF topics.teaser.pid -->
 				<!-- ENDIF topics.unreplied -->
 			</div>
