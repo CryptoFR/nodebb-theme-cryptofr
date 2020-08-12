@@ -28,7 +28,7 @@
 					<!-- ELSE -->
 					{buildAvatar(topics.user, "46", true, "not-responsive")}
 					<!-- ENDIF topics.thumb -->
-					<i class="fa fa-check"></i>
+					<i class="fad fa-check"></i>
 				</div>
 				<!-- ENDIF showSelect -->
 
@@ -44,9 +44,9 @@
 			</div>
 
 			<h2 component="topic/header" class="title">
-				<i component="topic/pinned" class="fa fa-thumb-tack <!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="[[topic:pinned]]"></i>
-				<i component="topic/locked" class="fa fa-lock <!-- IF !topics.locked -->hide<!-- ENDIF !topics.locked -->" title="[[topic:locked]]"></i>
-				<i component="topic/moved" class="fa fa-arrow-circle-right <!-- IF !topics.oldCid -->hide<!-- ENDIF !topics.oldCid -->" title="[[topic:moved]]"></i>
+				<i component="topic/pinned" class="<!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="[[topic:pinned]]"></i>
+				<i component="topic/locked" class="fad locked-icon fa-lock <!-- IF !topics.locked -->hide<!-- ENDIF !topics.locked -->" title="[[topic:locked]]"></i>
+				<i component="topic/moved" class="fad moved-icon fa-arrow-alt-circle-right <!-- IF !topics.oldCid -->hide<!-- ENDIF !topics.oldCid -->" title="[[topic:moved]]"></i>
 				{{{each icons}}}@value{{{end}}}
 
 				<!-- IF !topics.noAnchor -->
@@ -87,11 +87,13 @@
 		</div>
 
 		<div class="col-md-1 hidden-sm hidden-xs stats stats-postcount">
-			<span class="human-readable-number" title="{topics.postcount}">{topics.postcount}</span><br />
-			<small>[[global:posts]]</small>
 			<span class="stats-viewcount">
 				<i class="fad fa-eye"></i>
 				<span class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</span>
+			</span>
+			<span class="postcount">
+				<i class="fad fa-comment-alt"></i>
+				<span class="human-readable-number" title="{topics.postcount}">{topics.postcount}</span>
 			</span>
 		</div>
 
@@ -103,14 +105,22 @@
 				</p>
 				<!-- ELSE -->
 				<!-- IF topics.teaser.pid -->
-				<p>
-					<a href="{config.relative_path}/user/{topics.teaser.user.userslug}">{buildAvatar(topics.teaser.user, "24", true, "not-responsive")}</a>
-					<a class="permalink" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
-						<span class="timeago" title="{topics.teaser.timestampISO}"></span>
-					</a>
-				</p>
-				<div class="post-content">
-					{topics.teaser.content}
+				<div class="teaser-wrapper">
+					<p class="permalink-wrapper">
+						<a class="permalink category-link content" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
+							{topics.teaser.content}
+						</a>
+					</p>
+					<p class="hidden-xs user-wrapper">
+						<a class="timeago hidden-xs" title="{topics.teaser.timestampISO}" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"></a>
+						par
+						<span class="username">
+							{buildAvatar(topics.teaser.user, "24", true, "not-responsive")}
+							<a class="user" href="user/{topics.teaser.user.userslug}">
+								{topics.teaser.user.username}
+							</a>
+						</span>
+					</p>
 				</div>
 				<!-- ENDIF topics.teaser.pid -->
 				<!-- ENDIF topics.unreplied -->

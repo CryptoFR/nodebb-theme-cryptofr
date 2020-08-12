@@ -31,11 +31,9 @@
 
 		<!-- IMPORT partials/topic/deleted-message.tpl -->
 
-		<hr class="visible-xs" />
-
 		<ul component="topic" class="posts" data-tid="{tid}" data-cid="{cid}">
 			{{{each posts}}}
-				<li component="post" class="<!-- IF posts.deleted -->deleted<!-- ENDIF posts.deleted -->" <!-- IMPORT partials/data/topic.tpl -->>
+				<li component="post" class="<!-- IF !posts.index -->first-post<!-- ENDIF !posts.index --> post-wrapper <!-- IF posts.deleted -->deleted<!-- ENDIF posts.deleted -->" <!-- IMPORT partials/data/topic.tpl -->>
 					<a component="post/anchor" data-index="{posts.index}" id="{posts.index}"></a>
 
 					<meta itemprop="datePublished" content="{posts.timestampISO}">
