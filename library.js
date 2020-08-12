@@ -1,6 +1,6 @@
 'use strict';
 
-var striptags = require('striptags');
+var striptags = require.main.require('striptags');
 var meta = require.main.require('./src/meta');
 var user = require.main.require('./src/user');
 var posts = require.main.require('./src/posts');
@@ -33,6 +33,8 @@ library.init = function(params, callback) {
 		  res.json({ error: err && err.message, result: result });
 		});
 	  };
+
+	console.log('registering routes');
 
 	app.post('/cryptofrv2/vote', votePost);
 	app.post('/cryptofrv2/downvote', downvotePost);
