@@ -45,8 +45,8 @@
 
 			<h2 component="topic/header" class="title">
 				<i component="topic/pinned" class="<!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="[[topic:pinned]]"></i>
-				<i component="topic/locked" class="fad fa-lock <!-- IF !topics.locked -->hide<!-- ENDIF !topics.locked -->" title="[[topic:locked]]"></i>
-				<i component="topic/moved" class="fad fa-arrow-alt-circle-right <!-- IF !topics.oldCid -->hide<!-- ENDIF !topics.oldCid -->" title="[[topic:moved]]"></i>
+				<i component="topic/locked" class="fad locked-icon fa-lock <!-- IF !topics.locked -->hide<!-- ENDIF !topics.locked -->" title="[[topic:locked]]"></i>
+				<i component="topic/moved" class="fad moved-icon fa-arrow-alt-circle-right <!-- IF !topics.oldCid -->hide<!-- ENDIF !topics.oldCid -->" title="[[topic:moved]]"></i>
 				{{{each icons}}}@value{{{end}}}
 
 				<!-- IF !topics.noAnchor -->
@@ -114,6 +114,22 @@
 				<div class="post-content">
 					{topics.teaser.content}
 				</div>
+
+				<p class="permalink-wrapper">
+					<a class="permalink category-link content" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
+						{topics.teaser.content}
+					</a>
+				</p>
+				<p class="hidden-xs user-wrapper">
+					<a class="timeago hidden-xs" title="{../timestampISO}" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"></a>
+					par
+					<span class="username">
+						{buildAvatar(topics.teaser.user, "24", true, "not-responsive")}
+						<a class="user" href="user/{../topics.teaser.user.userslug}">
+							{../topics.teaser.user.username}
+						</a>
+					</span>
+				</p>
 				<!-- ENDIF topics.teaser.pid -->
 				<!-- ENDIF topics.unreplied -->
 			</div>
