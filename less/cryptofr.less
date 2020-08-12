@@ -12,6 +12,33 @@ body {
 	.fad {
 		font-style: normal;
 	}
+
+	.btn {
+	    border-radius: 4px;
+	    padding: 6px 10px;
+	    text-transform: uppercase;
+
+	    &.btn-primary {
+		    background: #525C96;
+		    border-color: #525C96;
+		    text-transform: uppercase;
+		    &:hover {
+		    	background: #525aa5;
+		    	border-color: #525aa5;
+		    }
+		}
+
+		&.btn-default {
+		    color: #5f5f5f;
+		    background-color: #fafafa;
+		    border-color: #dedede;
+		    &:hover {
+		    	background: #fff;
+		    	border-color: #525aa5;
+		    	color: #434A81;
+		    }
+		}
+	}
 }
 
 .categories-title {
@@ -518,6 +545,11 @@ footer.container {
 	    	border-bottom: none;
 	    }
 	}
+}
+
+.category-options {
+	margin-bottom: 10px;
+    margin-top: 25px;
 }
 
 /***********************************

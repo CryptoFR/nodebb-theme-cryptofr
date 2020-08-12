@@ -8,9 +8,7 @@
 	<div class="category <!-- IF widgets.sidebar.length -->col-lg-9 col-sm-12<!-- ELSE -->col-lg-12<!-- ENDIF widgets.sidebar.length -->">
 		<!-- IMPORT partials/category/subcategory.tpl -->
 
-		<!-- IF children.length --><hr class="hidden-xs"/><!-- ENDIF children.length -->
-
-		<div class="clearfix">
+		<div class="clearfix category-options">
 			<!-- IF privileges.topics:create -->
 			<a href="{config.relative_path}/compose?cid={cid}" component="category/post" id="new_topic" class="btn btn-primary" data-ajaxify="false" role="button">[[category:new_topic_button]]</a>
 			<!-- ELSE -->
@@ -30,9 +28,7 @@
 			</span>
 		</div>
 
-		<hr class="hidden-xs" />
-
-		<div class="hidden-xs category-title">Catégorie <i class="fad fa-arrow-from-left"></i> {name}</div>
+		<div class="hidden-xs category-title">Catégorie <i class="fad fa-angle-double-right" style="margin-left: 2px;"></i> {name}</div>
 
 		<!-- IF !topics.length -->
 		<!-- IF privileges.topics:create -->
