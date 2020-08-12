@@ -601,7 +601,21 @@ footer.container {
 	}
 
 	.stats-postcount {
-	    padding-left: 0px;
+	    padding: 0;
+	    display: flex;
+	    flex-direction: column;
+
+
+	    .human-readable-number {
+		    font-size: 13px!important;
+		    margin-left: 3px;
+		    font-weight: 400 !important;
+		}
+
+	    .stats-viewcount, .postcount {
+		    display: inline-block;
+    		font-size: 15px;
+		}
 	}
 
 	.stats-viewcount {
