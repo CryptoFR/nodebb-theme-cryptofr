@@ -87,13 +87,13 @@
 		</div>
 
 		<div class="col-md-1 hidden-sm hidden-xs stats stats-postcount">
-			<span class="stats-viewcount">
-				<i class="fad fa-eye"></i>
-				<span class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</span>
-			</span>
 			<span class="postcount">
 				<i class="fad fa-comment-alt"></i>
 				<span class="human-readable-number" title="{topics.postcount}">{topics.postcount}</span>
+			</span>
+			<span class="stats-viewcount">
+				<i class="fad fa-eye"></i>
+				<span class="human-readable-number" title="{topics.viewcount}">{topics.viewcount}</span>
 			</span>
 		</div>
 
