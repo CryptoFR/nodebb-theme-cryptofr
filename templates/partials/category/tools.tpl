@@ -13,12 +13,12 @@
 		</li>
 		<li>
 			<a component="topic/pin" href="#">
-				<i class="fad fa-thumb-tack"></i> [[topic:thread_tools.pin]]
+				<i class="fad fa-thumbtack"></i> [[topic:thread_tools.pin]]
 			</a>
 		</li>
 		<li>
 			<a component="topic/unpin" href="#" class="hidden">
-				<i class="fad fa-thumb-tack fa-rotate-90"></i> [[topic:thread_tools.unpin]]
+				<i class="fad fa-thumbtack fa-rotate-90"></i> [[topic:thread_tools.unpin]]
 			</a>
 		</li>
 
@@ -37,13 +37,13 @@
 
 		<li>
 			<a component="topic/move" href="#">
-				<i class="fas fa-expand-arrows-alt"></i> [[topic:thread_tools.move]]
+				<i class="fad fa-expand-arrows-alt"></i> [[topic:thread_tools.move]]
 			</a>
 		</li>
 		{{{if template.category}}}
 		<li>
 			<a component="topic/move-all" href="#">
-				<i class="fad fa-expand-arrows-alt"></i> [[topic:thread_tools.move_all]]
+				<i class="fas fa-expand-arrows-alt"></i> [[topic:thread_tools.move_all]]
 			</a>
 		</li>
 		{{{end}}}
