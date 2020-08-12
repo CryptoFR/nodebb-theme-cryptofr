@@ -572,7 +572,18 @@ footer.container {
 	}
 
     .teaser {
-	    max-height: 75px !important;
+	    .permalink-wrapper {
+		    max-height: 30px;
+		    overflow: hidden;
+		    .topic-list li .teaser .content {
+			    text-decoration: none;
+			    color: #434A81;
+			    overflow: hidden;
+			    &:hover {
+			    	color: #555d9c;
+			    }
+			}
+		}
 	}
 
 	.stats-votes {
