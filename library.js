@@ -148,4 +148,18 @@ library.addUserToTopic = function(data, callback) {
 	}
 };
 
+library.getCategoryHook = async function(data) {
+	const topics = data.topics;
+	const promises = topics.map(async (topic) => {
+		const hasVoted = await posts.hasVoted(topic.mainPid, data.uid);
+		return {
+			...topic,
+			upvoted: hasVoted.upvoted,
+			downvoted: hasVoted.downvoted,
+		}
+	});
+	data.topics = await Promise.all(promises);
+	return data;
+}
+
 module.exports = library;
