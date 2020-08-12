@@ -116,8 +116,8 @@
 						par
 						<span class="username">
 							{buildAvatar(topics.teaser.user, "24", true, "not-responsive")}
-							<a class="user" href="user/{../topics.teaser.user.userslug}">
-								{../topics.teaser.user.username}
+							<a class="user" href="user/{topics.teaser.user.userslug}">
+								{topics.teaser.user.username}
 							</a>
 						</span>
 					</p>
