@@ -69,6 +69,8 @@
 					<small>&bull;</small>
 				</span>
 				<!-- ENDIF topics.tags.length -->
+
+				<small class="hidden-xs"><span class="timeago" title="{topics.timestampISO}"></span> &bull; <a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{topics.user.username}</a></small>
 			</h2>
 		</div>
 
