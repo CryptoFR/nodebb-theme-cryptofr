@@ -1,4 +1,4 @@
-<div class="clearfix post-bar">
+<div class="clearfix">
 	<div class="tags pull-left">
 		<!-- IMPORT partials/topic/tags.tpl -->
 	</div>

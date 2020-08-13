@@ -594,9 +594,15 @@ footer.container {
 	}
 
 	&.unread {
-		background: #fffbf6;
+		background: #fff8f0;
 		.teaser .card {
 		    border-color: #f55e03ab!important;
+		    .content {
+		    	color: #f08f69;
+		    	&:hover {
+		    		color: #d07a58;
+		    	}
+		    }
 		}
 	}
 
@@ -740,6 +746,7 @@ footer.container {
     background: #ffffff;
     margin-left: 15px;
     padding: 10px 0px;
+    padding-bottom: 0px;
 
     h1 .topic-title {
 	    font-family: Barlow;
@@ -783,6 +790,7 @@ footer.container {
 	.posts {
 		padding: 0 25px;
 	    background: #fafafa;
+	    margin-bottom: -1px;
 	}
 
 	.post-wrapper {
