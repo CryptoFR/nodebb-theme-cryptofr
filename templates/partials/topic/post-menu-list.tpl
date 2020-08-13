@@ -83,7 +83,7 @@
 		<span component="post/bookmark-count" class="bookmarkCount" data-bookmarks="{posts.bookmarks}">{posts.bookmarks}</span>&nbsp;
 
 		<i component="post/bookmark/on" class="fas fa-heart <!-- IF !posts.bookmarked -->hidden<!-- ENDIF !posts.bookmarked -->"></i>
-		<i component="post/bookmark/off" class="fad fa-heart-broken <!-- IF posts.bookmarked -->hidden<!-- ENDIF posts.bookmarked -->"></i>
+		<i component="post/bookmark/off" class="fad fa-heart <!-- IF posts.bookmarked -->hidden<!-- ENDIF posts.bookmarked -->"></i>
 	</a>
 </li>
 <!-- ENDIF config.loggedIn -->
@@ -94,7 +94,7 @@
 <!-- ENDIF postSharing.length -->
 {{{each postSharing}}}
 	<li>
-		<a role="menuitem" component="share/{postSharing.id}" tabindex="-1" href="#"><span class="menu-icon"><i class="fad {postSharing.class}"></i></span> {postSharing.name}</a>
+		<a role="menuitem" component="share/{postSharing.id}" tabindex="-1" href="#"><span class="menu-icon"><i class="fab {postSharing.class}"></i></span> {postSharing.name}</a>
 	</li>
 {{{end}}}
 <!-- ENDIF !posts.deleted -->
