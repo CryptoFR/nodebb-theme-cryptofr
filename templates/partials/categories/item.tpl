@@ -7,7 +7,7 @@
 		</div>
 
 		<h2 class="title">
-			<i class="visible-xs d-sm-none fad {../icon}"></i> <!-- IMPORT partials/categories/link.tpl -->
+			<i class="visible-xs-inline-block d-sm-none fad {../icon}"></i> <!-- IMPORT partials/categories/link.tpl -->
 		</h2>
 		<div>
 			<!-- IF ../descriptionParsed -->
