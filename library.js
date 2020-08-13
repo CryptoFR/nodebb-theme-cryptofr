@@ -156,6 +156,7 @@ library.getCategoryHook = async function(data) {
 			...topic,
 			upvoted: hasVoted.upvoted,
 			downvoted: hasVoted.downvoted,
+			enableVoting: data.uid !== topic.uid
 		}
 	});
 	data.topics = await Promise.all(promises);
