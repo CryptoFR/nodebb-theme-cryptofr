@@ -111,8 +111,8 @@
 							{topics.teaser.content}
 						</a>
 					</p>
-					<p class="hidden-xs user-wrapper">
-						<a class="timeago hidden-xs" title="{topics.teaser.timestampISO}" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"></a>
+					<p class="user-wrapper">
+						<a class="timeago" title="{topics.teaser.timestampISO}" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"></a>
 						par
 						<span class="username">
 							{buildAvatar(topics.teaser.user, "24", true, "not-responsive")}
