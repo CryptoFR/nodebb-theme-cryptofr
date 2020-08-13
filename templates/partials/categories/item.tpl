@@ -7,7 +7,7 @@
 		</div>
 
 		<h2 class="title">
-			<i class="d-block visible-xs-inline-block d-sm-none fad {../icon}"></i> <!-- IMPORT partials/categories/link.tpl -->
+			<i class="visible-xs d-sm-none fad {../icon}"></i> <!-- IMPORT partials/categories/link.tpl -->
 		</h2>
 		<div>
 			<!-- IF ../descriptionParsed -->
@@ -19,13 +19,6 @@
 			{function.generateChildrenCategories}
 			<!-- ENDIF !config.hideSubCategories -->
 		</div>
-		<span class="visible-xs pull-right">
-			<!-- IF ../teaser.timestampISO -->
-			<a class="permalink" href="{../teaser.url}">
-				<small class="timeago" title="{../teaser.timestampISO}"></small>
-			</a>
-			<!-- ENDIF ../teaser.timestampISO -->
-		</span>
 	</div>
 
 	<!-- IF !../link -->
@@ -40,6 +33,13 @@
 	<!-- IF !config.hideCategoryLastPost -->
 	<div class="col-md-4 col-sm-3 col-xs-4 teaser {../unread-class}" component="topic/teaser">
 		<!-- IMPORT partials/categories/lastpost.tpl -->
+		<span class="visible-xs pull-right">
+			<!-- IF ../teaser.timestampISO -->
+			<!-- <a class="permalink" href="{../teaser.url}">
+				<small class="timeago" title="{../teaser.timestampISO}"></small>
+			</a> -->
+			<!-- ENDIF ../teaser.timestampISO -->
+		</span>
 	</div>
 	<!-- ENDIF !config.hideCategoryLastPost -->
 	<!-- ENDIF !../link -->
