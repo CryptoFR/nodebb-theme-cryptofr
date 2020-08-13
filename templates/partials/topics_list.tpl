@@ -6,13 +6,13 @@
 
 		<div class="col-md-1 stats stats-votes">
 			<span class="voting <!-- IF topics.pinned -->hide<!-- ENDIF topics.pinned -->" title="{topics.votes}">
-				<a href="#" class="upvote <!-- IF topics.upvoted -->upvoted<!-- ENDIF topics.upvoted -->" data-main-pid="{topics.mainPid}">
+				<a href="#" class="upvote <!-- IF topics.upvoted -->upvoted<!-- ENDIF topics.upvoted --> <!-- IF !topics.enableVoting -->vote-disabled<!-- ENDIF !topics.enableVoting -->" data-main-pid="{topics.mainPid}">
 					<i class="fad fa-angle-up"></i>
 				</a>
 
 				<span data-votes-count>{topics.votes}</span>
 
-				<a href="#" class="downvote <!-- IF topics.downvoted -->downvoted<!-- ENDIF topics.downvoted -->"  data-main-pid="{topics.mainPid}">
+				<a href="#" class="downvote <!-- IF topics.downvoted -->downvoted<!-- ENDIF topics.downvoted --> <!-- IF !topics.enableVoting -->vote-disabled<!-- ENDIF !topics.enableVoting -->"  data-main-pid="{topics.mainPid}">
 					<i class="fad fa-angle-down"></i>
 				</a>
 			</span>
