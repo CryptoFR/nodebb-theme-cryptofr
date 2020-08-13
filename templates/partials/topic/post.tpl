@@ -54,22 +54,6 @@
 	<!-- ENDIF posts.user.signature -->
 
 	<small class="pull-left post-actions">
-		<!-- IF !hideReplies -->
-		<a component="post/reply-count" href="#" class="threaded-replies no-select <!-- IF !posts.replies.count -->hidden<!-- ENDIF !posts.replies.count -->">
-			<span component="post/reply-count/avatars" class="avatars <!-- IF posts.replies.hasMore -->hasMore<!-- ENDIF posts.replies.hasMore -->">
-				{{{each posts.replies.users}}}
-				{buildAvatar(posts.replies.users, "xs", true, "")}
-				{{{end}}}
-			</span>
-
-			<span class="replies-count" component="post/reply-count/text" data-replies="{posts.replies.count}">{posts.replies.text}</span>
-			<!-- <span class="replies-last hidden-xs">[[topic:last_reply_time]] <span class="timeago" title="{posts.replies.timestampISO}"></span></span> -->
-
-			<i class="fad fa-chevron-right" component="post/replies/open"></i>
-			<i class="fad fa-chevron-down hidden" component="post/replies/close"></i>
-			<i class="fad fa-spin fa-spinner hidden" component="post/replies/loading"></i>
-		</a>
-		<!-- ENDIF !hideReplies -->
 
 		<!-- IF !reputation:disabled -->
 		<span class="votes">
@@ -97,3 +81,20 @@
 		<!-- IMPORT partials/topic/post-menu.tpl -->
 	</small>
 </div>
+
+<!-- IF !hideReplies -->
+<a component="post/reply-count" href="#" class="threaded-replies no-select <!-- IF !posts.replies.count -->hidden<!-- ENDIF !posts.replies.count -->">
+	<span component="post/reply-count/avatars" class="avatars <!-- IF posts.replies.hasMore -->hasMore<!-- ENDIF posts.replies.hasMore -->">
+		{{{each posts.replies.users}}}
+		{buildAvatar(posts.replies.users, "xs", true, "")}
+		{{{end}}}
+	</span>
+
+	<span class="replies-count" component="post/reply-count/text" data-replies="{posts.replies.count}">{posts.replies.text}</span>
+	<span class="replies-last hidden-xs">[[topic:last_reply_time]] <span class="timeago" title="{posts.replies.timestampISO}"></span></span>
+
+	<i class="fad fa-caret-right" component="post/replies/open"></i>
+	<i class="fad fa-caret-down hidden" component="post/replies/close"></i>
+	<i class="fad fa-spin fa-spinner hidden" component="post/replies/loading"></i>
+</a>
+<!-- ENDIF !hideReplies -->
