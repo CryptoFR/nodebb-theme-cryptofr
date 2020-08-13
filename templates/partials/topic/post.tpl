@@ -53,12 +53,7 @@
 	<div component="post/signature" data-uid="{posts.user.uid}" class="post-signature">{posts.user.signature}</div>
 	<!-- ENDIF posts.user.signature -->
 
-	<small class="pull-right">
-		<span class="post-tools">
-			<a component="post/reply" href="#" class="no-select <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]</a>
-			<a component="post/quote" href="#" class="no-select <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->">[[topic:quote]]</a>
-		</span>
-
+	<small class="pull-left post-actions">
 		<!-- IF !reputation:disabled -->
 		<span class="votes">
 			<a component="post/upvote" href="#" class="<!-- IF posts.upvoted -->upvoted<!-- ENDIF posts.upvoted -->">
@@ -75,6 +70,13 @@
 		</span>
 		<!-- ENDIF !reputation:disabled -->
 
+		<span class="post-tools">
+			<a component="post/reply" href="#" class="no-select <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->">[[topic:reply]]</a>
+			<a component="post/quote" href="#" class="no-select <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->">[[topic:quote]]</a>
+		</span>
+	</small>
+
+	<small class="pull-right">
 		<!-- IMPORT partials/topic/post-menu.tpl -->
 	</small>
 
