@@ -19,7 +19,7 @@
 			<span class="pinned <!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="{topics.votes}"><i class="fad fa-thumbtack"></i></span>
 		</div>
 
-		<div class="col-md-6 col-sm-9 col-xs-7 content">
+		<div class="col-md-6 col-sm-9 col-xs-6 content">
 			<div class="avatar pull-left">
 				<!-- IF showSelect -->
 				<div class="select" component="topic/select">
@@ -69,16 +69,6 @@
 					<small>&bull;</small>
 				</span>
 				<!-- ENDIF topics.tags.length -->
-
-				<small class="hidden-xs"><span class="timeago" title="{topics.timestampISO}"></span> &bull; <a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{topics.user.username}</a></small>
-				<small class="visible-xs-inline">
-					<i class="fa fa-reply"></i> &nbsp;
-					<!-- IF topics.teaser.timestamp -->
-					<span class="timeago" title="{topics.teaser.timestampISO}"></span>
-					<!-- ELSE -->
-					<span class="timeago" title="{topics.timestampISO}"></span>
-					<!-- ENDIF topics.teaser.timestamp -->
-				</small>
 			</h2>
 		</div>
 
@@ -97,7 +87,7 @@
 			</span>
 		</div>
 
-		<div class="col-md-4 col-sm-3 teaser col-xs-3" component="topic/teaser">
+		<div class="col-md-4 col-sm-3 teaser col-xs-4" component="topic/teaser">
 			<div class="card" style="border-color: {topics.category.bgColor}">
 				<!-- IF topics.unreplied -->
 				<p>
