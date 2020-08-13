@@ -857,6 +857,43 @@ footer.container {
 		    letter-spacing: -5px;
 		    font-style: normal;
 		}
+
+		.post-actions {
+		    margin-left: 61px;
+		    display: flex;
+		    align-items: center;
+
+		    .votes {
+			    font-size: 13px;
+			    display: flex;
+			    align-items: center;
+
+			    .upvote, .downvote {
+			    	font-size: 23px;
+			    	line-height: 23px;
+			    }
+
+			    .upvote {
+			    	margin-right: 5px;
+			    	&:hover {
+			    		color: #405bab;
+			    	}
+			    	&.upvoted {
+			    		color: #405bab;
+			    	}
+			    }
+			    .downvote {
+			    	margin-left: 5px;
+			    	margin-right: 5px;
+			    	&:hover {
+			    		color: #d23030;
+			    	}
+			    	&.downvoted {
+			    		color: #d23030;
+			    	}
+			    }
+			}
+		}
 	}
 
 	.tags {

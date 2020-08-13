@@ -56,14 +56,14 @@
 	<small class="pull-left post-actions">
 		<!-- IF !reputation:disabled -->
 		<span class="votes">
-			<a component="post/upvote" href="#" class="<!-- IF posts.upvoted -->upvoted<!-- ENDIF posts.upvoted -->">
+			<a component="post/upvote" href="#" class="upvote <!-- IF posts.upvoted -->upvoted<!-- ENDIF posts.upvoted -->">
 				<i class="fad fa-angle-up"></i>
 			</a>
 
 			<span component="post/vote-count" data-votes="{posts.votes}">{posts.votes}</span>
 
 			<!-- IF !downvote:disabled -->
-			<a component="post/downvote" href="#" class="<!-- IF posts.downvoted -->downvoted<!-- ENDIF posts.downvoted -->">
+			<a component="post/downvote" href="#" class="downvote <!-- IF posts.downvoted -->downvoted<!-- ENDIF posts.downvoted -->">
 				<i class="fad fa-angle-down"></i>
 			</a>
 			<!-- ENDIF !downvote:disabled -->
