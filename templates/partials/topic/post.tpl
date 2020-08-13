@@ -37,7 +37,7 @@
 				<!-- ENDIF posts.user.custom_profile_info.length -->
 			</span>
 		</span>
-		<span class="bookmarked"><i class="fa fa-bookmark-o"></i></span>
+		<span class="bookmarked"><i class="fad fa-bookmark"></i></span>
 
 	</small>
 </div>
