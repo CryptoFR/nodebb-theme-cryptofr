@@ -905,6 +905,9 @@ footer.container {
 			}
 
 			.post-tools {
+				a {
+					padding-right: 0px;
+				}
 				.reply::after {
 				    content: "\f111";
 				    font-family: 'Font Awesome 5 Duotone';
@@ -915,12 +918,24 @@ footer.container {
 				    margin-left: 7px;
 			    }
 			    .reply, .quote {
-			    	font-size: 12px;
+			    	font-size: 13px;
 			    	color: #616161;
+			    	i {
+			    		margin-right: 3px;
+			    	}
 			    	&:hover {
 			    		color: #4a5085;
 			    	}
 			    }
+			}
+		}
+
+		.post-options {
+			a {
+				color: #606060;
+				&:hover {
+					color: #405bab;
+				}
 			}
 		}
 	}
