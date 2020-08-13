@@ -4,7 +4,7 @@
 	<li component="category/topic" class="row clearfix category-item {function.generateTopicClass} <!-- IF topics.pinned -->pinned-topic<!-- ENDIF topics.pinned -->" <!-- IMPORT partials/data/category.tpl -->>
 		<meta itemprop="name" content="{function.stripTags, title}">
 
-		<div class="col-md-1 stats stats-votes">
+		<div class="col-md-1 col-xs-1 stats stats-votes">
 			<span class="voting <!-- IF topics.pinned -->hide<!-- ENDIF topics.pinned -->" title="{topics.votes}">
 				<a href="#" class="upvote <!-- IF topics.upvoted -->upvoted<!-- ENDIF topics.upvoted --> <!-- IF !topics.enableVoting -->vote-disabled<!-- ENDIF !topics.enableVoting -->" data-main-pid="{topics.mainPid}">
 					<i class="fad fa-angle-up"></i>
@@ -19,7 +19,7 @@
 			<span class="pinned <!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="{topics.votes}"><i class="fad fa-thumbtack"></i></span>
 		</div>
 
-		<div class="col-md-6 col-sm-9 col-xs-10 content">
+		<div class="col-md-6 col-sm-9 col-xs-8 content">
 			<div class="avatar pull-left">
 				<!-- IF showSelect -->
 				<div class="select" component="topic/select">
@@ -82,9 +82,9 @@
 			</h2>
 		</div>
 
-		<div class="mobile-stat col-xs-2 visible-xs text-right">
+		<!-- <div class="mobile-stat col-xs-2 visible-xs text-right">
 			<span class="human-readable-number">{topics.postcount}</span> <a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"><i class="fa fa-arrow-circle-right"></i></a>
-		</div>
+		</div> -->
 
 		<div class="col-md-1 hidden-sm hidden-xs stats stats-postcount">
 			<span class="stats-viewcount">
@@ -97,7 +97,7 @@
 			</span>
 		</div>
 
-		<div class="col-md-4 col-sm-3 teaser hidden-xs" component="topic/teaser">
+		<div class="col-md-4 col-sm-3 teaser col-xs-2" component="topic/teaser">
 			<div class="card" style="border-color: {topics.category.bgColor}">
 				<!-- IF topics.unreplied -->
 				<p>
