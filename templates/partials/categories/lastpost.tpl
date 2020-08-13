@@ -8,7 +8,7 @@
 			</a>
 		</p>
 		<p class="user-wrapper">
-			<a class="timeago hidden-xs" title="{../timestampISO}" href="{config.relative_path}/topic/{../topic.slug}<!-- IF ../index -->/{../index}<!-- ENDIF ../index -->"></a>
+			<a class="timeago" title="{../timestampISO}" href="{config.relative_path}/topic/{../topic.slug}<!-- IF ../index -->/{../index}<!-- ENDIF ../index -->"></a>
 			par
 			<span class="username">
 				{buildAvatar(posts.user, "sm", true)}
