@@ -1,7 +1,7 @@
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle pull-left" id="mobile-menu">
 					<span component="notifications/icon" class="notification-icon fas fa-bell unread-count" data-content="{unreadCount.notification}"></span>
-					<i class="fad fa-lg fa-bars"></i>
+					<i class="fas fa-lg fa-bars"></i>
 				</button>
 				<button type="button" class="navbar-toggle hidden" id="mobile-chats">
 					<span component="chat/icon" class="notification-icon fas fa-comments unread-count" data-content="{unreadCount.chat}"></span>

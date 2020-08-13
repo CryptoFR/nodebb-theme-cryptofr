@@ -1031,5 +1031,18 @@ footer.container {
 
 
 @media (max-width: 768px) {
-	
+	ul.categories [data-cid="2"]:before, ul.categories [data-cid="25"]:before, ul.categories [data-cid="44"]:before, ul.categories [data-cid="71"]:before, ul.categories [data-cid="96"]:before {
+	    font-size: 17px;
+	}
+
+	.categories>li, .category>ul>li {
+		margin: 0px -16px;
+	}
+}
+
+@media (max-width: 1199px) {}
+	.header .navbar-toggle .notification-icon.unread-count::after {
+	    position: static;
+	    display: inline-block;
+	}
 }
