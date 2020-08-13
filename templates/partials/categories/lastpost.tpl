@@ -7,7 +7,7 @@
 				{../topic.title}
 			</a>
 		</p>
-		<p class="hidden-xs user-wrapper">
+		<p class="user-wrapper">
 			<a class="timeago hidden-xs" title="{../timestampISO}" href="{config.relative_path}/topic/{../topic.slug}<!-- IF ../index -->/{../index}<!-- ENDIF ../index -->"></a>
 			par
 			<span class="username">
