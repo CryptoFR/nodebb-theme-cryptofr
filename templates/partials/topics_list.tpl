@@ -10,7 +10,7 @@
 					<i class="fad fa-angle-up"></i>
 				</a>
 
-				{topics.votes}
+				<span data-votes-count>{topics.votes}</span>
 
 				<a href="#" class="downvote <!-- IF topics.downvoted -->downvoted<!-- ENDIF topics.downvoted -->"  data-main-pid="{topics.mainPid}">
 					<i class="fad fa-angle-down"></i>
