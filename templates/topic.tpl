@@ -66,11 +66,11 @@
 		<div class="visible-xs visible-sm pagination-block text-center">
 			<div class="progress-bar"></div>
 			<div class="wrapper">
-				<i class="fad fa-2x fa-angle-double-up pointer pagetop"></i>
-				<i class="fas fa-2x fa-angle-up pointer pageup"></i>
+				<i class="fad fa-2x fa-angle-double-up fa-fw pointer pagetop"></i>
+				<i class="fas fa-2x fa-angle-up pointer fa-fw pageup"></i>
 				<span class="pagination-text"></span>
-				<i class="fas fa-2x fa-angle-down pointer pagedown"></i>
-				<i class="fad fa-2x fa-angle-double-down pointer pagebottom"></i>
+				<i class="fas fa-2x fa-angle-down pointer fa-fw pagedown"></i>
+				<i class="fad fa-2x fa-angle-double-down pointer fa-fw pagebottom"></i>
 			</div>
 		</div>
 	</div>
