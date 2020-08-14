@@ -834,7 +834,7 @@ footer.container {
 	}
 
 	.post-bar {
-	    background: #f6f8ff;
+	    background: #cbd1e536;
     	padding: 25px;
     	border-top: 1px solid #e8e8e8;
 
@@ -1255,6 +1255,31 @@ footer.container {
 
 	.topic {
 	    margin-left: 0px;
+
+	    h1 {
+	    	line-height: 60px;
+	    	padding-bottom: 5px;
+	    	.topic-title {
+			    font-size: 20px;
+			    padding: 0 47px 0 21px;
+			    margin-top: 0px !important;
+			    line-height: 60px;
+			}
+		}
+
+		.topic-vote { 
+		    top: -86px;
+		    right: 20px;
+			.votes {
+			    font-size: 16px;
+			    .downvote, .upvote {
+				    color: rgba(0,0,0,.38);
+				    font-size: 28px;
+				    margin-top: -11px;
+				    margin-bottom: -13px;
+				}
+			}
+		}
 
 	    .post-wrapper .post-actions {
 		    margin-left: 0px;
