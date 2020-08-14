@@ -1,10 +1,10 @@
 		</div><!-- /.container#content -->
-		<footer id="footer" class="container footer" style="margin-left: -30px;">
-			<div class="copyright">
-				Creative Commons (CC) 2014 - 2020 - <a target="_blank" href="https://twitter.com/CryptoFR">CryptoFR</a> | Framework by <a target="_blank" href="https://community.nodebb.org/">NodeBB</a> | <a target="_blank" href="https://cryptofr.com/legal">Mentions Légales</a> 
-			</div>
-		</footer>
 	</main>
+	<footer id="footer" class="container footer" style="margin-left: -30px;">
+		<div class="copyright">
+			Creative Commons (CC) 2014 - 2020 - <a target="_blank" href="https://twitter.com/CryptoFR">CryptoFR</a> | Framework by <a target="_blank" href="https://community.nodebb.org/">NodeBB</a> | <a target="_blank" href="https://cryptofr.com/legal">Mentions Légales</a> 
+		</div>
+	</footer>
 	<!-- IF !isSpider -->
 	<div class="topic-search hidden">
 		<div class="btn-group">
