@@ -1,4 +1,24 @@
 <div class="clearfix post-header">
+	<!-- IF !posts.index -->
+	<div class="topic-vote">
+		<!-- IF !reputation:disabled -->
+		<span class="votes">
+			<a component="post/upvote" href="#" class="upvote <!-- IF posts.upvoted -->upvoted<!-- ENDIF posts.upvoted -->">
+				<i class="fad fa-angle-up"></i>
+			</a>
+
+			<span component="post/vote-count" data-votes="{posts.votes}">{posts.votes}</span>
+
+			<!-- IF !downvote:disabled -->
+			<a component="post/downvote" href="#" class="downvote <!-- IF posts.downvoted -->downvoted<!-- ENDIF posts.downvoted -->">
+				<i class="fad fa-angle-down"></i>
+			</a>
+			<!-- ENDIF !downvote:disabled -->
+		</span>
+		<!-- ENDIF !reputation:disabled -->
+	</div>
+	<!-- ENDIF !posts.index -->
+	
 	<div class="icon pull-left">
 		<a href="<!-- IF posts.user.userslug -->{config.relative_path}/user/{posts.user.userslug}<!-- ELSE -->#<!-- ENDIF posts.user.userslug -->">
 			{buildAvatar(posts.user, "sm2x", true, "", "user/picture")}
