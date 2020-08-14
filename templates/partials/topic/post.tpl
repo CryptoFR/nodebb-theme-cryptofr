@@ -54,22 +54,23 @@
 	<!-- ENDIF posts.user.signature -->
 
 	<small class="pull-left post-actions">
+		<!-- IF posts.index -->
+			<!-- IF !reputation:disabled -->
+			<span class="votes">
+				<a component="post/upvote" href="#" class="upvote <!-- IF posts.upvoted -->upvoted<!-- ENDIF posts.upvoted -->">
+					<i class="fad fa-angle-up"></i>
+				</a>
 
-		<!-- IF !reputation:disabled -->
-		<span class="votes">
-			<a component="post/upvote" href="#" class="upvote <!-- IF posts.upvoted -->upvoted<!-- ENDIF posts.upvoted -->">
-				<i class="fad fa-angle-up"></i>
-			</a>
+				<span component="post/vote-count" data-votes="{posts.votes}">{posts.votes}</span>
 
-			<span component="post/vote-count" data-votes="{posts.votes}">{posts.votes}</span>
-
-			<!-- IF !downvote:disabled -->
-			<a component="post/downvote" href="#" class="downvote <!-- IF posts.downvoted -->downvoted<!-- ENDIF posts.downvoted -->">
-				<i class="fad fa-angle-down"></i>
-			</a>
-			<!-- ENDIF !downvote:disabled -->
-		</span>
-		<!-- ENDIF !reputation:disabled -->
+				<!-- IF !downvote:disabled -->
+				<a component="post/downvote" href="#" class="downvote <!-- IF posts.downvoted -->downvoted<!-- ENDIF posts.downvoted -->">
+					<i class="fad fa-angle-down"></i>
+				</a>
+				<!-- ENDIF !downvote:disabled -->
+			</span>
+			<!-- ENDIF !reputation:disabled -->
+		<!-- ENDIF posts.index -->
 
 		<span class="post-tools">
 			<a component="post/reply" href="#" class="no-select reply <!-- IF !privileges.topics:reply -->hidden<!-- ENDIF !privileges.topics:reply -->"><i class="fad fa-reply"></i> [[topic:reply]]</a>

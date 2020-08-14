@@ -33,6 +33,25 @@
 
 		<ul component="topic" class="posts" data-tid="{tid}" data-cid="{cid}">
 			{{{each posts}}}
+				<!-- IF !posts.index -->
+				<div class="topic-vote">
+					<!-- IF !reputation:disabled -->
+					<span class="votes">
+						<a component="post/upvote" href="#" class="upvote <!-- IF posts.upvoted -->upvoted<!-- ENDIF posts.upvoted -->">
+							<i class="fad fa-angle-up"></i>
+						</a>
+
+						<span component="post/vote-count" data-votes="{posts.votes}">{posts.votes}</span>
+
+						<!-- IF !downvote:disabled -->
+						<a component="post/downvote" href="#" class="downvote <!-- IF posts.downvoted -->downvoted<!-- ENDIF posts.downvoted -->">
+							<i class="fad fa-angle-down"></i>
+						</a>
+						<!-- ENDIF !downvote:disabled -->
+					</span>
+					<!-- ENDIF !reputation:disabled -->
+				</div>
+				<!-- ENDIF !posts.index -->
 				<li component="post" class="<!-- IF !posts.index -->first-post<!-- ENDIF !posts.index --> post-wrapper <!-- IF posts.deleted -->deleted<!-- ENDIF posts.deleted -->" <!-- IMPORT partials/data/topic.tpl -->>
 					<a component="post/anchor" data-index="{posts.index}" id="{posts.index}"></a>
 
