@@ -8,13 +8,14 @@
 	<div class="topic <!-- IF widgets.sidebar.length -->col-lg-9 col-sm-12<!-- ELSE -->col-lg-12<!-- ENDIF widgets.sidebar.length -->">
 
 		<h1 component="post/header" itemprop="name">
+			<span class="topic-title" component="topic/title">
+				<i class="fad fa-thumbtack <!-- IF !pinned -->hidden<!-- ENDIF !pinned -->" title="[[topic:pinned]]"></i>
+				<i class="fad fa-lock <!-- IF !locked -->hidden<!-- ENDIF !locked -->" title="[[topic:locked]]"></i>
+				<i class="fad fa-arrow-circle-right <!-- IF !oldCid -->hidden<!-- ENDIF !oldCid -->" title="[[topic:moved]]"></i>
+				{{{each icons}}}@value{{{end}}}
 
-			<i class="fad fa-thumbtack <!-- IF !pinned -->hidden<!-- ENDIF !pinned -->" title="[[topic:pinned]]"></i>
-			<i class="fad fa-lock <!-- IF !locked -->hidden<!-- ENDIF !locked -->" title="[[topic:locked]]"></i>
-			<i class="fad fa-arrow-circle-right <!-- IF !oldCid -->hidden<!-- ENDIF !oldCid -->" title="[[topic:moved]]"></i>
-			{{{each icons}}}@value{{{end}}}
-
-			<span class="topic-title" component="topic/title">{title}</span>
+				{title}
+			</span>
 		</h1>
 
 		<!-- IF merger -->
