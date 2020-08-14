@@ -3,7 +3,7 @@
 
 	<div class="content col-xs-8 <!-- IF config.hideCategoryLastPost -->col-md-10 col-sm-12<!-- ELSE -->col-md-6 col-sm-9<!-- ENDIF config.hideCategoryLastPost -->">
 		<div class="icon hidden-xs pull-left" style="{function.generateCategoryBackground}">
-			<i class="fad fab {../icon}"></i>
+			<i class="fad {../icon}"></i>
 		</div>
 
 		<h2 class="title">
