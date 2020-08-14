@@ -98,7 +98,7 @@
 				<!-- ELSE -->
 				<!-- IF topics.teaser.pid -->
 				<div class="teaser-wrapper">
-					<p class="permalink-wrapper">
+					<p class="permalink-wrapper hidden-xs">
 						<a class="permalink category-link content" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}">
 							{topics.teaser.content}
 						</a>
