@@ -753,21 +753,26 @@ footer.container {
 .topic {
     background: #ffffff;
     margin-left: 15px;
-    padding: 10px 0px;
-    padding-bottom: 0px;
+    padding: 0px;
 
-    h1 .topic-title {
-	    font-family: Barlow;
-	    font-style: normal;
-	    font-weight: 500;
-	    letter-spacing: 0.25px;
-	    color: #3e4475 !important;
-	    padding: 0 25px;
+    h1 {
+	    line-height: 70px;
+	    margin-bottom: 25px;
+	    background: #fafafa;
+	    border-bottom: 1px solid #e9e9e8;
+	    .topic-title {
+		    font-family: Barlow;
+		    font-style: normal;
+		    font-weight: 500;
+		    letter-spacing: 0.25px;
+		    color: #3e4475 !important;
+		    padding: 0 25px;
+		}
 	}
 
 	.topic-vote {
 	    position: absolute;
-	    top: 10px;
+	    top: -80px;
 	    right: 20px;
 	    .votes {
 		    display: flex;
