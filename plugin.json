@@ -17,6 +17,9 @@
 		"lib/modules/quickreply.js",
 		"lib/vote.js"
 	],
+	"staticDirs": {
+		"img": "public/img"
+	},
 	"modules": {
 		"pulling.js": "node_modules/pulling/build/pulling-drawer.js"
 	},
