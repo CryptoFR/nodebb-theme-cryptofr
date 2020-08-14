@@ -674,8 +674,11 @@ footer.container {
 			color: #434A81;
 			
 			.vote-disabled {
-				cursor: none;
+				cursor: default;
 				opacity: 0.4;
+				&:hover {
+		    		color: inherit !important;
+		    	}
 			}
 
 		    .downvote, .upvote {
@@ -760,6 +763,50 @@ footer.container {
 	    letter-spacing: 0.25px;
 	    color: #3e4475 !important;
 	    padding: 0 25px;
+	}
+
+	.topic-vote {
+	    position: absolute;
+	    top: 10px;
+	    right: 20px;
+	    .votes {
+		    display: flex;
+		    flex-direction: column;
+		    font-family: Poppins;
+		    font-size: 18px;
+			color: #434A81;
+			
+			.vote-disabled {
+				cursor: default;
+				opacity: 0.4;
+				&:hover {
+		    		color: inherit !important;
+		    	}
+			}
+
+		    .downvote, .upvote {
+			    color: rgba(0, 0, 0, 0.38);
+			    font-size: 35px;
+			    margin-top: -7px;
+			    margin-bottom: -6px;
+		    }
+		    .upvote {
+		    	&:hover {
+		    		color: #405bab;
+		    	}
+		    	&.upvoted {
+		    		color: #405bab;
+		    	}
+		    }
+		    .downvote {
+		    	&:hover {
+		    		color: #d23030;
+		    	}
+		    	&.downvoted {
+		    		color: #d23030;
+		    	}
+		    }
+		}
 	}
 
 	.first-post {
