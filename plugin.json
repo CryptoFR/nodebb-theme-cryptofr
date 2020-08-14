@@ -15,6 +15,7 @@
 		"lib/modules/nprogress.js",
 		"lib/modules/autohidingnavbar.min.js",
 		"lib/modules/quickreply.js",
+		"lib/modules/switchTheme.js",
 		"lib/vote.js"
 	],
 	"staticDirs": {

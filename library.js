@@ -4,6 +4,12 @@ var striptags = require.main.require('striptags');
 var meta = require.main.require('./src/meta');
 var user = require.main.require('./src/user');
 var posts = require.main.require('./src/posts');
+var socket = require.main.require('./src/socket.io/plugins');
+
+socket.cryptofrv2 = {};
+socket.cryptofrv2.saveTheme = function(socket, data, callback) {
+	console.log(data)	
+};
 
 var library = {};
 
