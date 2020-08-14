@@ -774,17 +774,29 @@ footer.container {
 		}
 	}
 
-	.group-label {
-	    display: inline-block;
-	    text-transform: uppercase;
-	    vertical-align: sub;
-	    padding: 4px 6px;
-	    border-radius: 10px;
-	    max-width: 150px;
-	    overflow-x: hidden;
-	    text-overflow: ellipsis;
-	    white-space: nowrap;
+	.group-label-wrapper {
+		.group-label {
+		    display: inline-block;
+		    text-transform: uppercase;
+		    vertical-align: sub;
+		    padding: 4px 6px;
+		    border-radius: 10px;
+		    max-width: 150px;
+		    overflow-x: hidden;
+		    text-overflow: ellipsis;
+		    white-space: nowrap;
+		}
+		&.bitcoin, &.ethereum {
+			.group-label {
+				display: none;
+			}
+			.small-icon {
+				display: inline-block;
+			}
+		}
 	}
+
+	
 
 	.topic-vote {
 	    position: absolute;
