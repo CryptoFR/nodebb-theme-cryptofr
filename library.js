@@ -150,13 +150,14 @@ library.addUserToTopic = function(data, callback) {
 
 library.getCategoryHook = async function(data) {
 	const topics = data.topics;
+	const uid = data.uid;
 	const promises = topics.map(async (topic) => {
-		const hasVoted = await posts.hasVoted(topic.mainPid, data.uid);
+		const hasVoted = await posts.hasVoted(topic.mainPid, uid);
 		return {
 			...topic,
 			upvoted: hasVoted.upvoted,
 			downvoted: hasVoted.downvoted,
-			enableVoting: data.uid !== topic.uid
+			enableVoting: uid !== 0 && data.uid !== topic.uid
 		}
 	});
 	data.topics = await Promise.all(promises);
