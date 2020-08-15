@@ -110,7 +110,7 @@
 								</a>
 							</li>
 							<li role="presentation" class="divider"></li>
-							<li>
+							<!-- <li>
 								<a component="header/switchtheme/dark" href="#">
 									<i class="fad fa-user-cog"></i> <span>Switch theme (Dark)</span>
 								</a>
@@ -119,7 +119,7 @@
 								<a component="header/switchtheme/light" href="#">
 									<i class="fad fa-user-cog"></i> <span>Switch theme (Light)</span>
 								</a>
-							</li>
+							</li> -->
 							<!-- IF showModMenu -->
 							<li role="presentation" class="divider"></li>
 							<li class="dropdown-header">[[pages:moderator-tools]]</li>
