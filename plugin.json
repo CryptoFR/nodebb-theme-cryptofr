@@ -8,6 +8,7 @@
 		{ "hook": "static:app.load", "method": "init" },
 		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
 		{ "hook": "filter:topic.build", "method": "addUserToTopic" },
+		{ "hook": "filter:user.whitelistFields", "method": "getUserFields"},
 		{ "hook": "filter:category.topics.get", "method": "getCategoryHook"}
 	],
 	"scripts": [
@@ -15,6 +16,7 @@
 		"lib/modules/nprogress.js",
 		"lib/modules/autohidingnavbar.min.js",
 		"lib/modules/quickreply.js",
+		"lib/modules/switchTheme.js",
 		"lib/vote.js"
 	],
 	"staticDirs": {

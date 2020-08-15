@@ -4,8 +4,25 @@ var striptags = require.main.require('striptags');
 var meta = require.main.require('./src/meta');
 var user = require.main.require('./src/user');
 var posts = require.main.require('./src/posts');
+var db = require.main.require('./src/database');
+var socket = require.main.require('./src/socket.io/plugins');
+
+socket.cryptofrv2 = {};
+socket.cryptofrv2.saveTheme = async function(socket, data, callback) {
+	if (socket.uid === 0) {
+		return;
+	}
+	await db.setObjectField(`user:${socket.uid}`, 'theme', data.theme);
+	socket.emit('plugins.cryptofrv2.themeSaved', { theme: data.theme });
+};
 
 var library = {};
+
+library.getUserFields = async function (data) {
+	data.whitelist = [...data.whitelist, 'theme'];
+	return data;
+}
+
 
 library.init = function(params, callback) {
 	var app = params.router;
