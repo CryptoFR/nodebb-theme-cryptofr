@@ -38,6 +38,5 @@
 			});
 	    }
 	});
-    $(".navbar").width($("#panel").width());
 });
 </script>
