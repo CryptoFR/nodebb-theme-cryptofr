@@ -1418,3 +1418,115 @@ footer.container {
 	    display: inline-block;
 	}
 }
+
+/***********************************
+
+           Dark theme
+
+***********************************/
+
+body.dark {
+	background: #252525;    
+
+	.btn {
+	    border-radius: 4px;
+	    padding: 6px 10px;
+	    text-transform: uppercase;
+
+	    &.btn-primary, &.btn-info {
+		    background: #525C96;
+		    border-color: #525C96;
+		    text-transform: uppercase;
+		    &:hover {
+		    	background: #6870b3;
+		    	border-color: #6870b3;
+		    }
+		}
+
+		.open>.dropdown-toggle.btn-info {
+			background: #6870b3;
+		    border-color: #6870b3;
+		}
+
+		&.btn-default {
+		    color: #5f5f5f;
+		    background-color: #fafafa;
+		    border-color: #dedede;
+		    &:hover {
+		    	background: #fff;
+		    	border-color: #525aa5;
+		    	color: #434A81;
+		    }
+		}
+	}
+
+	.categories>li, .category>ul>li {
+	    background: #3a3939;
+	    border-left: 1px solid #989aa0;
+	    border-right: 1px solid #989aa0;
+
+	    .content .icon {
+		    background-color: transparent!important;
+		    color: #ebeeff!important;
+		}
+
+		h2 a {
+		    color: #ebeeff;
+		}
+
+		.description, .stats small {
+			color: #dbdeea;
+		}
+
+		.teaser {
+		    background: #30315c;
+		    .card {
+			    border-color: #434981!important;
+			    .post-title {
+				    color: #ebeeff;
+				}
+				.username .user {
+				    color: #dbdeea!important;
+				}
+				.user-wrapper {
+				    color: #dbdeea;
+				    a {
+				    	color: #dbdeea;
+				    }
+				}
+			}
+		}
+
+		.category-children .category-children-item {
+    		background: #434981;
+    		small {
+    			color: #ebeeff;
+    		}
+    	}
+
+    	.human-readable-number {
+		    color: #ebeeff;
+		}
+	}
+
+	ul.categories [data-cid="2"]:before, ul.categories [data-cid="25"]:before, ul.categories [data-cid="44"]:before, ul.categories [data-cid="71"]:before, ul.categories [data-cid="96"]:before {
+	    color: #d2d4e0;
+	    border-right: 1px solid #989aa0;
+	}
+	ul.categories [data-cid="2"], ul.categories [data-cid="25"], ul.categories [data-cid="44"], ul.categories [data-cid="71"], ul.categories [data-cid="96"] {
+	    border-top: 1px solid #989aa0;
+	}
+
+	.panel.panel-default {
+	    border-color: #989aa0;
+
+	    .panel-heading {
+		    color: #dbdeea;
+		    background-color: #3a3939;
+		    border-color: #989aa0;
+		}
+		.panel-body {
+		    background: #3a3939;
+		}
+	}
+}
