@@ -111,20 +111,20 @@
 							</li>
 							<li role="presentation" class="divider"></li>
 							<li class="theme-switch">
-								{user.theme} / {user.isdark}
+								< theme: {user.theme} >
 								<!-- IF user.theme -->
-								<a component="header/switchtheme/light" class="switch-light <!-- IF !user.isdark --> hidden <!-- ENDIF !user.isdark -->" href="#">
-									<span><i class="fad fa-toggle-on"></i>{user.isdark} Theme Sombre</span>
+								<a component="header/switchtheme/light" class="switch-light is-{user.theme}" href="#">
+									<span><i class="fad fa-toggle-on"></i>Theme Sombre</span>
 								</a>
-								<a component="header/switchtheme/dark" class="switch-dark <!-- IF user.isdark --> hidden <!-- ENDIF user.isdark -->" href="#">
-									<span><i class="fad fa-toggle-off"></i>{user.isdark} Theme Clair</span>
+								<a component="header/switchtheme/dark" class="switch-dark is-{user.theme}" href="#">
+									<span><i class="fad fa-toggle-off"></i>Theme Clair</span>
 								</a>
 								<!-- ELSE -->
-								<a component="header/switchtheme/light" class="switch-light hidden" href="#">
-									<span><i class="fad fa-toggle-on"></i>{user.isdark} Theme Sombre</span>
+								<a component="header/switchtheme/light" class="switch-light is-light" href="#">
+									<span><i class="fad fa-toggle-on"></i>Theme Sombre</span>
 								</a>
-								<a component="header/switchtheme/dark" class="switch-dark" href="#">
-									<span><i class="fad fa-toggle-off"></i>{user.isdark} Theme Clair</span>
+								<a component="header/switchtheme/dark" class="switch-dark is-light" href="#">
+									<span><i class="fad fa-toggle-off"></i>Theme Clair</span>
 								</a>
 								<!-- ENDIF user.theme -->
 							</li>

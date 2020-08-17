@@ -10,13 +10,11 @@ var socket = require.main.require('./src/socket.io/plugins');
 socket.cryptofrv2 = {};
 socket.cryptofrv2.saveTheme = async function(socket, data, callback) {
 	if (socket.uid === 0) {
-		console.log("test 0");
 		return;
 	}
 	console.log("saving");
-	//await db.setObjectField(`user:${socket.uid}`, 'theme', data.theme);
-	await db.setObjectField(`user:${socket.uid}`, 'isdark', data.isdark);
-	socket.emit('plugins.cryptofrv2.themeSaved', { theme: data.theme, isdark: data.isdark });
+	await db.setObjectField(`user:${socket.uid}`, 'theme', data.theme);
+	socket.emit('plugins.cryptofrv2.themeSaved', { theme: data.theme });
 };
 
 var library = {};
