@@ -12,7 +12,6 @@ socket.cryptofrv2.saveTheme = async function(socket, data, callback) {
 	if (socket.uid === 0) {
 		return;
 	}
-	console.log("saving");
 	await db.setObjectField(`user:${socket.uid}`, 'theme', data.theme);
 	socket.emit('plugins.cryptofrv2.themeSaved', { theme: data.theme });
 };
