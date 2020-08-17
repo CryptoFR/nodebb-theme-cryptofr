@@ -112,12 +112,12 @@
 							<li role="presentation" class="divider"></li>
 							<li>
 								<a component="header/switchtheme/dark" href="#">
-									<i class="fad fa-user-cog"></i> <span>Switch theme (Dark)</span>
+									<i class="fad fa-user-cog"></i> <span>{user.theme} Switch theme (Dark)</span>
 								</a>
 							</li>
 							<li>
 								<a component="header/switchtheme/light" href="#">
-									<i class="fad fa-user-cog"></i> <span>Switch theme (Light)</span>
+									<i class="fad fa-user-cog"></i> <span>{user.theme} Switch theme (Light)</span>
 								</a>
 							</li>
 							<!-- IF showModMenu -->
