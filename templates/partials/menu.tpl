@@ -112,11 +112,11 @@
 							<li role="presentation" class="divider"></li>
 							<li class="theme-switch">
 								<!-- IF user.theme -->
-								<a component="header/switchtheme/dark" href="#">
+								<a component="header/switchtheme/light" href="#">
 									<span><i class="fad fa-toggle-on"></i> Theme Sombre</span>
 								</a>
 								<!-- ELSE -->
-								<a component="header/switchtheme/light" href="#">
+								<a component="header/switchtheme/dark" href="#">
 									<span><i class="fad fa-toggle-off"></i> Theme Clair</span>
 								</a>
 								<!-- ENDIF user.theme -->
