@@ -111,19 +111,20 @@
 							</li>
 							<li role="presentation" class="divider"></li>
 							<li class="theme-switch">
+								{user.theme}{user.isdark}
 								<!-- IF user.theme -->
 									<!-- IF user.isDark -->
 									<a component="header/switchtheme/light" href="#">
-										<span><i class="fad fa-toggle-on"></i>{user.isDark} Theme Sombre</span>
+										<span><i class="fad fa-toggle-on"></i>{user.isdark} Theme Sombre</span>
 									</a>
 									<!-- ELSE -->
 									<a component="header/switchtheme/dark" href="#">
-										<span><i class="fad fa-toggle-off"></i>{user.isDark} Theme Clair</span>
+										<span><i class="fad fa-toggle-off"></i>{user.isdark} Theme Clair</span>
 									</a>
 									<!-- ENDIF user.isDark -->
 								<!-- ELSE -->
 								<a component="header/switchtheme/dark" href="#">
-									<span><i class="fad fa-toggle-off"></i>{user.isDark} Theme Clair</span>
+									<span><i class="fad fa-toggle-off"></i>{user.isdark} Theme Clair</span>
 								</a>
 								<!-- ENDIF user.theme -->
 							</li>
