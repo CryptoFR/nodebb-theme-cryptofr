@@ -111,7 +111,7 @@
 							</li>
 							<li role="presentation" class="divider"></li>
 							<li class="theme-switch">
-								{user.theme}{user.isdark}
+								{user.theme} / {user.isdark}
 								<!-- IF user.theme -->
 									<a component="header/switchtheme/light" class="switch-light <!-- IF !user.isdark --> hidden <!-- ENDIF !user.isdark -->" href="#">
 										<span><i class="fad fa-toggle-on"></i>{user.isdark} Theme Sombre</span>
