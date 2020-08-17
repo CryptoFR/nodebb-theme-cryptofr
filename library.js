@@ -13,6 +13,7 @@ socket.cryptofrv2.saveTheme = async function(socket, data, callback) {
 		return;
 	}
 	await db.setObjectField(`user:${socket.uid}`, 'theme', data.theme);
+	await db.setObjectField(`user:${socket.uid}`, 'isDark', data.isDark);
 	socket.emit('plugins.cryptofrv2.themeSaved', { theme: data.theme });
 };
 
