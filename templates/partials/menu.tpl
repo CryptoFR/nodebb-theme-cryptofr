@@ -113,10 +113,10 @@
 							<li class="theme-switch">
 								{user.theme}{user.isdark}
 								<!-- IF user.theme -->
-									<a component="header/switchtheme/light" class="switch-light <!-- IF !user.isDark -->hidden<!-- ENDIF !user.isDark -->" href="#">
+									<a component="header/switchtheme/light" class="switch-light <!-- IF !user.isdark --> hidden <!-- ENDIF !user.isdark -->" href="#">
 										<span><i class="fad fa-toggle-on"></i>{user.isdark} Theme Sombre</span>
 									</a>
-									<a component="header/switchtheme/dark" class="switch-dark <!-- !IF user.isDark -->hidden<!-- ENDIF !user.isDark -->" href="#">
+									<a component="header/switchtheme/dark" class="switch-dark <!-- IF user.isdark --> hidden <!-- ENDIF user.isdark -->" href="#">
 										<span><i class="fad fa-toggle-off"></i>{user.isdark} Theme Clair</span>
 									</a>
 								<!-- ELSE -->
