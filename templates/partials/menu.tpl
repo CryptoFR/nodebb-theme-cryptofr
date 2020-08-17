@@ -112,14 +112,12 @@
 							<li role="presentation" class="divider"></li>
 							<li class="theme-switch">
 								<!-- IF user.theme -->
-								Theme clair
 								<a component="header/switchtheme/dark" href="#">
-									<i class="fad fa-user-cog"></i> <span><i class="fad fa-toggle-on"></i> Sombre</span>
+									<span><i class="fad fa-toggle-on"></i> Theme Sombre</span>
 								</a>
 								<!-- ELSE -->
-								Theme sombre
 								<a component="header/switchtheme/light" href="#">
-									<i class="fad fa-user-cog"></i> <span><i class="fad fa-toggle-off"></i> Clair</span>
+									<span><i class="fad fa-toggle-off"></i> Theme Clair</span>
 								</a>
 								<!-- ENDIF user.theme -->
 							</li>
