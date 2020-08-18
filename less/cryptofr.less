@@ -1515,6 +1515,9 @@ body.dark {
 					.user-wrapper {
 					    a {
 					    	color: #ff9a72;
+					    	&:hover {
+					    		color: #434881;
+					    	}
 					    }
 					}
 				}
@@ -1531,12 +1534,115 @@ body.dark {
     		}
 
     		&.unread small {
-    			color: #dbdeea;
+    			color: #f79a72;
     		}
     	}
 
     	.human-readable-number {
 		    color: #ebeeff;
+		}
+	}
+
+	.breadcrumb {
+	    color: #525C96;
+	    >.active {
+	    	color: #ffffff;
+	    }
+	    a {
+	    	color: #dadada;
+	    	&:hover {
+	    		color: #ffffff;
+	    	}
+	    }
+	    >li+li:before {
+		    color: #dadada;
+		}
+	}
+
+	.topic {
+	    background: #515156;
+
+	    h1 {
+		    border-bottom: 1px solid #828080;
+		    background: #505056;
+		    .topic-title {
+			    color: #aeb6f9!important;
+			}
+		}
+
+		.topic-vote {
+			.votes {
+				color: whitesmoke;
+				.upvote, .downvote {
+				    color: #e6e6e6;
+				}
+				.upvote {
+					&.upvoted, &:hover {
+					    color: #5781ff;
+					}
+				}
+				.downvote {
+					&.downvoted, &:hover {
+					    color: #ff6b6b;
+					}
+				}
+			}
+		}
+
+	    .stats small {
+		    color: #fcfcfc;
+		}
+
+	    .posts {
+		    background: #3a3939;
+		}
+		.first-post {
+		    background: #515156;
+		}
+		.content, .post-signature {
+			color: whitesmoke;
+		}
+
+		.post-wrapper {
+			border-bottom: 1px solid #828080;
+			.username a {
+			    color: #b1baff;
+			}
+			.post-time {
+			    color: #e0e0e0;
+			}
+			.post-actions {
+				.post-tools .reply {
+				    color: #e6e6e6;
+				    &:hover {
+				    	color: #ffffff;
+				    }
+				}
+				.votes {
+					color: whitesmoke;
+					.upvote, .downvote {
+					    color: #e6e6e6;
+					}
+					.upvote {
+						&.upvoted, &:hover {
+						    color: #5781ff;
+						}
+					}
+					.downvote {
+						&.downvoted, &:hover {
+						    color: #ff6b6b;
+						}
+					}
+				}
+			}
+		}
+
+		.post-bar {
+			border-top: 1px solid #828080;
+			background: #292929;
+			.stats {
+			    color: #b1baff;
+			}
 		}
 	}
 
