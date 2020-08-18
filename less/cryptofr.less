@@ -837,8 +837,6 @@ footer.container {
 		}
 	}
 
-	
-
 	.topic-vote {
 	    position: absolute;
 	    top: -93px;
@@ -889,7 +887,6 @@ footer.container {
 	    background: white;
 	    margin: 0px -25px;
 	    padding: 0px 25px !important;
-
 	    hr {
 		    margin-top: 0;
 		    margin-bottom: 0;
@@ -900,6 +897,9 @@ footer.container {
 		.post-bar {
 			margin: 0 -25px;
 			margin-top: 15px;
+		}
+		.post-footer {
+			margin-bottom: 15px;
 		}
 	}
 
@@ -935,6 +935,18 @@ footer.container {
 	.post-wrapper {
 		padding: 15px 0px;
 		border-bottom: 1px solid #E8E8E8;
+
+		[component="post/parent"] {
+		    color: #545454 !important;
+		}
+
+		.topic .post-wrapper [component="post/replies"] li {
+    		background: #313131!important;
+    	}
+
+		.threaded-replies {
+		    color: #656eb3;
+		}
 
 		.username a {
 			color: #434A81;
@@ -1448,7 +1460,7 @@ body.dark {
 	color: whitesmoke;
 
 	a {
-	    color: #7bc2ff;
+	    color: #acd8fd;
 	}
 
 	.user-info {
@@ -1691,11 +1703,11 @@ body.dark {
 	}
 
 	.topic {
-	    background: #515156;
+	    background: #3a3939;
 
 	    h1 {
 		    border-bottom: 1px solid #828080;
-		    background: #505056;
+		    background: #4a4a4a;
 		    .topic-title {
 			    color: #aeb6f9!important;
 			}
@@ -1728,13 +1740,16 @@ body.dark {
 		    background: #3a3939;
 		}
 		.first-post {
-		    background: #515156;
+		    background: #3a3939;
 		}
 		.content, .post-signature {
 			color: whitesmoke;
 		}
 
 		.post-wrapper {
+			&.deleted {
+			    opacity: 0.5;
+			}
 			border-bottom: 1px solid #828080;
 			.username a {
 			    color: #b1baff;
