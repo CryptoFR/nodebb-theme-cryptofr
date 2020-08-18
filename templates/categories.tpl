@@ -28,8 +28,6 @@
 	$.get(RELATIVE_PATH + '/api/', function(data) {
 	data.categories.forEach(function(category) {
 	    if (category.children.length) {
-
-	    	console.log(category.children);
 	    	$("[data-cid='"+category.cid+"'] .subcategories-list").removeClass("hidden");
 	    	category.children.forEach(function(subcategory) {
 			    if ( subcategory['unread-class'] ) {
