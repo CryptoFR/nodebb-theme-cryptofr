@@ -837,6 +837,8 @@ footer.container {
 		}
 	}
 
+	
+
 	.topic-vote {
 	    position: absolute;
 	    top: -93px;
@@ -935,18 +937,6 @@ footer.container {
 	.post-wrapper {
 		padding: 15px 0px;
 		border-bottom: 1px solid #E8E8E8;
-
-		[component="post/parent"] {
-		    color: #545454 !important;
-		}
-
-		.topic .post-wrapper [component="post/replies"] li {
-    		background: #313131!important;
-    	}
-
-		.threaded-replies {
-		    color: #656eb3;
-		}
 
 		.username a {
 			color: #434A81;
@@ -1747,6 +1737,19 @@ body.dark {
 		}
 
 		.post-wrapper {
+
+			[component="post/parent"] {
+		    	color: #545454 !important;
+			}
+
+			[component="post/replies"] li {
+	    		background: #313131!important;
+	    	}
+
+			.threaded-replies {
+			    color: #656eb3;
+			}
+
 			&.deleted {
 			    opacity: 0.5;
 			}
@@ -1821,6 +1824,10 @@ body.dark {
 
 	.h4, h4, label {
 	    color: whitesmoke;
+	}
+
+	.posts-list .posts-list-item .topic-title {
+	    color: #ccc;
 	}
 
 	.panel.panel-default {
