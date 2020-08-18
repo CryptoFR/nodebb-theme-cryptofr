@@ -1505,12 +1505,33 @@ body.dark {
 				    }
 				}
 			}
+
+			&.unread {
+				.card {
+					border-color: #ff9a72!important;
+					.post-title {
+					    color: #ff9a72;
+					}
+					.user-wrapper {
+					    a {
+					    	color: #ff9a72;
+					    }
+					}
+				}
+			}
 		}
 
 		.category-children .category-children-item {
     		background: #434981;
+    		&:hover {
+    			background: #737abb;
+    		}
     		small {
     			color: #ebeeff;
+    		}
+
+    		&.unread small {
+    			color: #dbdeea;
     		}
     	}
 
@@ -1525,6 +1546,12 @@ body.dark {
     	background: #515156;
 	}
 	ul.categories [data-cid="2"], ul.categories [data-cid="25"], ul.categories [data-cid="44"], ul.categories [data-cid="71"], ul.categories [data-cid="96"] {
+	    border-top: 1px solid #656565;
+	}
+	ul.categories [data-cid="103"], ul.categories [data-cid="18"], ul.categories [data-cid="27"], ul.categories [data-cid="36"], ul.categories [data-cid="73"], ul.categories [data-cid="94"] {
+	    border-bottom: 1px solid #656565;
+	}
+	ul.categories [data-cid="1"] {
 	    border-top: 1px solid #656565;
 	}
 
