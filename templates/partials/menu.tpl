@@ -110,15 +110,23 @@
 								</a>
 							</li>
 							<li role="presentation" class="divider"></li>
-							<li>
-								<a component="header/switchtheme/dark" href="#">
-									<i class="fad fa-user-cog"></i> <span>Switch theme (Dark)</span>
+							<li class="dropdown-header">Choix du thème</li>
+							<li class="theme-switch">
+								<!-- IF user.theme -->
+								<a component="header/switchtheme/light" class="switch-light is-{user.theme}" href="#">
+									<span><i class="fad fa-toggle-on"></i> Theme Sombre</span>
 								</a>
-							</li>
-							<li>
-								<a component="header/switchtheme/light" href="#">
-									<i class="fad fa-user-cog"></i> <span>Switch theme (Light)</span>
+								<a component="header/switchtheme/dark" class="switch-dark is-{user.theme}" href="#">
+									<span><i class="fad fa-toggle-off"></i> Theme Clair</span>
 								</a>
+								<!-- ELSE -->
+								<a component="header/switchtheme/light" class="switch-light is-light" href="#">
+									<span><i class="fad fa-toggle-on"></i> Theme Sombre</span>
+								</a>
+								<a component="header/switchtheme/dark" class="switch-dark is-light" href="#">
+									<span><i class="fad fa-toggle-off"></i> Theme Clair</span>
+								</a>
+								<!-- ENDIF user.theme -->
 							</li>
 							<!-- IF showModMenu -->
 							<li role="presentation" class="divider"></li>

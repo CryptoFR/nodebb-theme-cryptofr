@@ -524,7 +524,6 @@ footer.container {
     font-weight: 400;
     font-size: 15px;
     line-height: 49px;
-    height: 50px;
     position: absolute;
     left: 0px;
     text-align: center;
@@ -889,7 +888,6 @@ footer.container {
 	    background: white;
 	    margin: 0px -25px;
 	    padding: 0px 25px !important;
-
 	    hr {
 		    margin-top: 0;
 		    margin-bottom: 0;
@@ -900,6 +898,9 @@ footer.container {
 		.post-bar {
 			margin: 0 -25px;
 			margin-top: 15px;
+		}
+		.post-footer {
+			margin-bottom: 15px;
 		}
 	}
 
@@ -1419,24 +1420,103 @@ footer.container {
 	}
 }
 
+button.fab {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.156863), 0 2px 10px 0 rgba(0,0,0,.117647);
+    background-color: #444682;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    line-height: 55.5px;
+    vertical-align: middle;
+    height: 55.5px;
+    width: 55.5px;
+}
+
+.taskbar .navbar-nav li.active a::after {
+    content: '\f06e';
+}
+
 /***********************************
 
            Dark theme
 
 ***********************************/
 
+body.light {
+	.switch-light {
+		display: none;
+	}
+}
+
+@media (max-width: 767px) {
+	body.dark {
+		.categories>li .content h2 i, .category>ul>li .content h2 i {
+		    color: #ebeeff;
+		    margin-right: 3px;
+		}
+		.categories>li, .category>ul>li {
+		    border-top: none;
+		}
+	}
+}
+
 body.dark {
-	background: #252525;    
+	background: #252525;
+	color: whitesmoke;
+
+	a {
+	    color: #acd8fd;
+	}
+
+	.user-info {
+	    color: whitesmoke;
+	}
+
+	.pagination {
+		>li>a, >li>span {
+		    color: #bbe0ff;
+		    background-color: #020202;
+		    border: 1px solid #353535;
+		    &:hover {
+			    color: #d3e9fb;
+			    background-color: #1f1f1f;
+		    }
+		}
+	}
+
+	.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+	    background-color: #616163;
+	}
+
+	.pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover {
+	    color: #a9a9a9;
+	    background-color: #252525;
+	    border: 1px solid #353535;
+	}
+	.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+	    background-color: #4e4f90;
+	    border-color: #4e4f90;
+	}
+
+	.nav-pills>li a {
+		color: #bbe0ff;
+	    background: #020202;
+	    &:hover {
+		    color: #d3e9fb;
+		    background-color: #1f1f1f;
+	    }
+	}
+
+	.switch-dark {
+		display: none;
+	}
 
 	.btn {
-	    border-radius: 4px;
-	    padding: 6px 10px;
-	    text-transform: uppercase;
-
 	    &.btn-primary, &.btn-info {
 		    background: #525C96;
 		    border-color: #525C96;
 		    text-transform: uppercase;
+		    color: white;
 		    &:hover {
 		    	background: #6870b3;
 		    	border-color: #6870b3;
@@ -1449,21 +1529,31 @@ body.dark {
 		}
 
 		&.btn-default {
-		    color: #5f5f5f;
-		    background-color: #fafafa;
-		    border-color: #dedede;
+		    color: #f5f5f5;
+		    background-color: #717171;
+		    border-color: #717171;
 		    &:hover {
-		    	background: #fff;
-		    	border-color: #525aa5;
-		    	color: #434A81;
+		    	background-color: #8e8e8e;
+		    	border-color: #8e8e8e;
+		    	color: #fff;
 		    }
+		}
+	}
+
+	.dropdown-menu {
+	    background-color: #1b1b1b;
+	    >li>a {
+		    color: whitesmoke;
+		    &:hover {
+			    background: #6d6d6d;
+			}
 		}
 	}
 
 	.categories>li, .category>ul>li {
 	    background: #3a3939;
-	    border-left: 1px solid #989aa0;
-	    border-right: 1px solid #989aa0;
+	    border-left: 1px solid #656565;
+	    border-right: 1px solid #656565;
 
 	    .content .icon {
 		    background-color: transparent!important;
@@ -1480,6 +1570,7 @@ body.dark {
 
 		.teaser {
 		    background: #30315c;
+		    margin-right: 0px;
 		    .card {
 			    border-color: #434981!important;
 			    .post-title {
@@ -1495,12 +1586,40 @@ body.dark {
 				    }
 				}
 			}
+
+			&.unread {
+				.card {
+					border-color: #ff9a72!important;
+					.post-title {
+					    color: #ff9a72;
+					}
+					.user-wrapper {
+					    a {
+					    	color: #ff9a72;
+					    	&:hover {
+					    		color: #434881;
+					    	}
+					    }
+					}
+				}
+			}
+		}
+
+		.post-content, .card p {
+		    color: #e8e8e8;
 		}
 
 		.category-children .category-children-item {
     		background: #434981;
+    		&:hover {
+    			background: #737abb;
+    		}
     		small {
     			color: #ebeeff;
+    		}
+
+    		&.unread small {
+    			color: #f79a72;
     		}
     	}
 
@@ -1509,24 +1628,272 @@ body.dark {
 		}
 	}
 
+	.breadcrumb {
+	    color: #525C96;
+	    >.active {
+	    	color: #ffffff;
+	    }
+	    a {
+	    	color: #dadada;
+	    	&:hover {
+	    		color: #ffffff;
+	    	}
+	    }
+	    >li+li:before {
+		    color: #dadada;
+		}
+	}
+
+	.category-title {
+	    color: #ebeeff;
+	    border: 1px solid #656565;
+	    background: #515156;
+	    margin-bottom: -10px;
+	}
+
+	.subcategory .categories {
+		border-top: 1px solid #646464!important;
+		>li {
+		    border-bottom: 1px solid #646464!important;
+		}
+	}
+
+	.modal-content {
+	    background-color: #404040;
+	    .modal-footer {
+		    border-top: 1px solid #777777;
+		}
+	}
+
+	.topic-list {
+		li {
+			.locked-icon {
+			    color: #ebeeff;
+			}
+			border-bottom: 1px solid #646464!important;
+			&.pinned-topic {
+			    background: #30315c!important;
+			}
+			h2 small {
+			    color: #c5c5c5;
+			}
+			.stats-votes .pinned i {
+			    color: whitesmoke;
+			}
+
+			.stats-postcount i {
+			    color: #dcdcfb;
+			}
+
+			.stats-votes .voting {
+				color: whitesmoke;
+				.upvote, .downvote {
+				    color: #e6e6e6;
+				}
+				.upvote {
+					&.upvoted, &:hover {
+					    color: #5781ff;
+					}
+				}
+				.downvote {
+					&.downvoted, &:hover {
+					    color: #ff6b6b;
+					}
+				}
+			}
+			.teaser .permalink-wrapper .content {
+			    color: #ced0de;
+			}
+		}
+	}
+
+	.topic {
+	    background: #3a3939;
+
+	    .pagination-block {
+		    background-color: #464646;
+		}
+
+	    h1 {
+		    border-bottom: 1px solid #828080;
+		    background: #4a4a4a;
+		    .topic-title {
+			    color: #aeb6f9!important;
+			}
+		}
+
+		.topic-vote {
+			.votes {
+				color: whitesmoke;
+				.upvote, .downvote {
+				    color: #e6e6e6;
+				}
+				.upvote {
+					&.upvoted, &:hover {
+					    color: #5781ff;
+					}
+				}
+				.downvote {
+					&.downvoted, &:hover {
+					    color: #ff6b6b;
+					}
+				}
+			}
+		}
+
+	    .stats small {
+		    color: #fcfcfc;
+		}
+
+	    .posts {
+		    background: #3a3939;
+		}
+		.first-post {
+		    background: #3a3939;
+		}
+		.content, .post-signature {
+			color: whitesmoke;
+		}
+
+		.post-wrapper {
+
+			[component="post/parent"] {
+		    	color: #545454 !important;
+			}
+
+			[component="post/replies"] li {
+	    		background: #313131!important;
+	    	}
+
+			.threaded-replies {
+			    color: #656eb3;
+			}
+
+			&.deleted {
+			    opacity: 0.5;
+			}
+			border-bottom: 1px solid #828080;
+			.username a {
+			    color: #b1baff;
+			}
+			.post-time {
+			    color: #e0e0e0;
+			}
+			.post-options a {
+			    color: #e6e6e6;
+			}
+			.post-actions {
+				.post-tools .reply, .post-tools .quote {
+				    color: #e6e6e6;
+				    &:hover {
+				    	color: #ffffff;
+				    }
+				}
+				.votes {
+					color: whitesmoke;
+					.upvote, .downvote {
+					    color: #e6e6e6;
+					}
+					.upvote {
+						&.upvoted, &:hover {
+						    color: #5781ff;
+						}
+					}
+					.downvote {
+						&.downvoted, &:hover {
+						    color: #ff6b6b;
+						}
+					}
+				}
+			}
+			.content a {
+			    color: #b1baff;
+			}
+			blockquote {
+			    color: #dee1ec;
+			}
+		}
+
+		.post-bar {
+			border-top: 1px solid #828080;
+			background: #313131;
+			.stats {
+			    color: #b1baff;
+			}
+		}
+	}
+
 	ul.categories [data-cid="2"]:before, ul.categories [data-cid="25"]:before, ul.categories [data-cid="44"]:before, ul.categories [data-cid="71"]:before, ul.categories [data-cid="96"]:before {
-	    color: #d2d4e0;
-	    border-right: 1px solid #989aa0;
+	    color: #ebeeff;
+    	border-right: 1px solid #656565;
+    	background: #515156;
 	}
 	ul.categories [data-cid="2"], ul.categories [data-cid="25"], ul.categories [data-cid="44"], ul.categories [data-cid="71"], ul.categories [data-cid="96"] {
-	    border-top: 1px solid #989aa0;
+	    border-top: 1px solid #656565;
+	}
+	ul.categories [data-cid="103"], ul.categories [data-cid="18"], ul.categories [data-cid="27"], ul.categories [data-cid="36"], ul.categories [data-cid="73"], ul.categories [data-cid="94"] {
+	    border-bottom: 1px solid #656565;
+	}
+	ul.categories [data-cid="1"] {
+	    border-top: 1px solid #656565;
+	}
+	ul.categories [data-cid="1"], ul.categories [data-cid="16"], ul.categories [data-cid="2"], ul.categories [data-cid="22"], ul.categories [data-cid="25"], ul.categories [data-cid="29"], ul.categories [data-cid="44"], ul.categories [data-cid="51"], ul.categories [data-cid="64"], ul.categories [data-cid="67"], ul.categories [data-cid="71"], ul.categories [data-cid="72"], ul.categories [data-cid="96"] {
+	    border-bottom: 1px solid #646464;
+	}
+
+	.h4, h4, label {
+	    color: whitesmoke;
+	}
+
+	.posts-list .posts-list-item .topic-title {
+	    color: #ccc;
+	}
+
+	.composer {
+	    background: #525252;
+	    .form-control {
+		    background: #525252;
+		    color: whitesmoke;
+		}
+		.write {
+		    border: 1px solid #696969;
+		    background: #272727;
+		}
+		.preview.well {
+		    background: #656464 !important;
+		    border: 1px solid #737373;
+		}
+		.mobile-navbar {
+		    background: #525c96;
+		}
 	}
 
 	.panel.panel-default {
-	    border-color: #989aa0;
+	    border-color: #656565;
 
 	    .panel-heading {
 		    color: #dbdeea;
 		    background-color: #3a3939;
-		    border-color: #989aa0;
+		    border-color: #656565;
+		    border-top-left-radius: 3px;
+    		border-top-right-radius: 3px;
 		}
 		.panel-body {
 		    background: #3a3939;
+		    border-bottom-left-radius: 3px;
+    		border-bottom-right-radius: 3px;
+		}
+	}
+
+	.chat-modal .chat-content li.chat-message .chat-user a, .expanded-chat .chat-content li.chat-message .chat-user a {
+    	color: #d1e1ff;
+	}
+
+	.taskbar-composer {
+		.fa-commenting-o:before {
+		    content: "\f4a4";
+		    font-family: 'Font Awesome 5 Pro';
+    		font-weight: 900;
 		}
 	}
 }
