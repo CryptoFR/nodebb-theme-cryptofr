@@ -1486,6 +1486,7 @@ body.dark {
 		    background: #525C96;
 		    border-color: #525C96;
 		    text-transform: uppercase;
+		    color: white;
 		    &:hover {
 		    	background: #6870b3;
 		    	border-color: #6870b3;
@@ -1620,8 +1621,16 @@ body.dark {
 	    margin-bottom: -10px;
 	}
 
+	.subcategory .categories {
+		border-top: 1px solid #646464!important;
+		>li {
+		    border-bottom: 1px solid #646464!important;
+		}
+	}
+
 	.topic-list {
 		li {
+			border-bottom: 1px solid #646464!important;
 			&.pinned-topic {
 			    background: #30315c!important;
 			}
