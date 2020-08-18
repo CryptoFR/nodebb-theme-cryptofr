@@ -110,8 +110,8 @@
 								</a>
 							</li>
 							<li role="presentation" class="divider"></li>
+							<li class="dropdown-header">Thème choisi</li>
 							<li class="theme-switch">
-								< theme: {user.theme} >
 								<!-- IF user.theme -->
 								<a component="header/switchtheme/light" class="switch-light is-{user.theme}" href="#">
 									<span><i class="fad fa-toggle-on"></i>Theme Sombre</span>
