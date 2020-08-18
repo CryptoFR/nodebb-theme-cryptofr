@@ -1434,6 +1434,44 @@ body.light {
 body.dark {
 	background: #252525;
 
+	a {
+	    color: #7bc2ff;
+	}
+
+	.user-info {
+	    color: whitesmoke;
+	}
+
+	.pagination {
+		>li>a, >li>span {
+		    color: #bbe0ff;
+		    background-color: #020202;
+		    border: 1px solid #353535;
+		    &:hover {
+			    color: #d3e9fb;
+			    background-color: #1f1f1f;
+		    }
+		}
+	}
+	.pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover {
+	    color: #a9a9a9;
+	    background-color: #252525;
+	    border: 1px solid #353535;
+	}
+	.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+	    background-color: #4e4f90;
+	    border-color: #4e4f90;
+	}
+
+	.nav-pills>li a {
+		color: #bbe0ff;
+	    background: #020202;
+	    &:hover {
+		    color: #d3e9fb;
+		    background-color: #1f1f1f;
+	    }
+	}
+
 	.switch-dark {
 		display: none;
 	}

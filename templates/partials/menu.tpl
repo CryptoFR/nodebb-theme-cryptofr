@@ -110,7 +110,7 @@
 								</a>
 							</li>
 							<li role="presentation" class="divider"></li>
-							<li class="dropdown-header">Thème choisi</li>
+							<li class="dropdown-header">Choix du thème</li>
 							<li class="theme-switch">
 								<!-- IF user.theme -->
 								<a component="header/switchtheme/light" class="switch-light is-{user.theme}" href="#">
