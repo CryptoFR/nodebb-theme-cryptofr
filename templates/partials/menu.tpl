@@ -114,17 +114,17 @@
 							<li class="theme-switch">
 								<!-- IF user.theme -->
 								<a component="header/switchtheme/light" class="switch-light is-{user.theme}" href="#">
-									<span><i class="fad fa-toggle-on"></i>Theme Sombre</span>
+									<span><i class="fad fa-toggle-off"></i> Theme Sombre</span>
 								</a>
 								<a component="header/switchtheme/dark" class="switch-dark is-{user.theme}" href="#">
-									<span><i class="fad fa-toggle-off"></i>Theme Clair</span>
+									<span><i class="fad fa-toggle-on"></i> Theme Clair</span>
 								</a>
 								<!-- ELSE -->
 								<a component="header/switchtheme/light" class="switch-light is-light" href="#">
-									<span><i class="fad fa-toggle-on"></i>Theme Sombre</span>
+									<span><i class="fad fa-toggle-off"></i> Theme Sombre</span>
 								</a>
 								<a component="header/switchtheme/dark" class="switch-dark is-light" href="#">
-									<span><i class="fad fa-toggle-off"></i>Theme Clair</span>
+									<span><i class="fad fa-toggle-on"></i> Theme Clair</span>
 								</a>
 								<!-- ENDIF user.theme -->
 							</li>
