@@ -1433,6 +1433,10 @@ button.fab {
     width: 55.5px;
 }
 
+.taskbar .navbar-nav li.active a::after {
+    content: '\f06e';
+}
+
 /***********************************
 
            Dark theme
@@ -1695,6 +1699,10 @@ body.dark {
 	.topic {
 	    background: #3a3939;
 
+	    .pagination-block {
+		    background-color: #464646;
+		}
+
 	    h1 {
 		    border-bottom: 1px solid #828080;
 		    background: #4a4a4a;
@@ -1844,6 +1852,9 @@ body.dark {
 		    background: #656464 !important;
 		    border: 1px solid #737373;
 		}
+		.mobile-navbar {
+		    background: #525c96;
+		}
 	}
 
 	.panel.panel-default {
@@ -1861,6 +1872,10 @@ body.dark {
 		    border-bottom-left-radius: 3px;
     		border-bottom-right-radius: 3px;
 		}
+	}
+
+	.chat-modal .chat-content li.chat-message .chat-user a, .expanded-chat .chat-content li.chat-message .chat-user a {
+    	color: #d1e1ff;
 	}
 
 	.taskbar-composer {
