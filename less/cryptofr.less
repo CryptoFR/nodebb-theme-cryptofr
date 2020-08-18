@@ -1641,8 +1641,18 @@ body.dark {
 		}
 	}
 
+	.modal-content {
+	    background-color: #404040;
+	    .modal-footer {
+		    border-top: 1px solid #777777;
+		}
+	}
+
 	.topic-list {
 		li {
+			.locked-icon {
+			    color: #ebeeff;
+			}
 			border-bottom: 1px solid #646464!important;
 			&.pinned-topic {
 			    background: #30315c!important;
@@ -1758,6 +1768,12 @@ body.dark {
 						}
 					}
 				}
+			}
+			.content a {
+			    color: #b1baff;
+			}
+			blockquote {
+			    color: #dee1ec;
 			}
 		}
 
