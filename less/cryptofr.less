@@ -1453,6 +1453,11 @@ body.dark {
 		    }
 		}
 	}
+
+	.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
+	    background-color: #616163;
+	}
+
 	.pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover {
 	    color: #a9a9a9;
 	    background-color: #252525;
@@ -1534,6 +1539,7 @@ body.dark {
 
 		.teaser {
 		    background: #30315c;
+		    margin-right: 0px;
 		    .card {
 			    border-color: #434981!important;
 			    .post-title {
@@ -1568,6 +1574,10 @@ body.dark {
 			}
 		}
 
+		.post-content, .card p {
+		    color: #e8e8e8;
+		}
+
 		.category-children .category-children-item {
     		background: #434981;
     		&:hover {
@@ -1600,6 +1610,51 @@ body.dark {
 	    }
 	    >li+li:before {
 		    color: #dadada;
+		}
+	}
+
+	.category-title {
+	    color: #ebeeff;
+	    border: 1px solid #656565;
+	    background: #515156;
+	    margin-bottom: -10px;
+	}
+
+	.topic-list {
+		li {
+			&.pinned-topic {
+			    background: #30315c!important;
+			}
+			h2 small {
+			    color: #c5c5c5;
+			}
+			.stats-votes .pinned i {
+			    color: whitesmoke;
+			}
+
+			.stats-postcount i {
+			    color: #dcdcfb;
+			}
+
+			.stats-votes .voting {
+				color: whitesmoke;
+				.upvote, .downvote {
+				    color: #e6e6e6;
+				}
+				.upvote {
+					&.upvoted, &:hover {
+					    color: #5781ff;
+					}
+				}
+				.downvote {
+					&.downvoted, &:hover {
+					    color: #ff6b6b;
+					}
+				}
+			}
+			.teaser .permalink-wrapper .content {
+			    color: #ced0de;
+			}
 		}
 	}
 
@@ -1715,9 +1770,13 @@ body.dark {
 		    color: #dbdeea;
 		    background-color: #3a3939;
 		    border-color: #656565;
+		    border-top-left-radius: 3px;
+    		border-top-right-radius: 3px;
 		}
 		.panel-body {
 		    background: #3a3939;
+		    border-bottom-left-radius: 3px;
+    		border-bottom-right-radius: 3px;
 		}
 	}
 }
