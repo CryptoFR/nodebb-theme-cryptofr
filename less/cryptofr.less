@@ -1419,6 +1419,18 @@ footer.container {
 	}
 }
 
+button.fab {
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,.156863), 0 2px 10px 0 rgba(0,0,0,.117647);
+    background-color: #444682;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    line-height: 55.5px;
+    vertical-align: middle;
+    height: 55.5px;
+    width: 55.5px;
+}
+
 /***********************************
 
            Dark theme
@@ -1433,6 +1445,7 @@ body.light {
 
 body.dark {
 	background: #252525;
+	color: whitesmoke;
 
 	a {
 	    color: #7bc2ff;
@@ -1770,6 +1783,13 @@ body.dark {
 	}
 	ul.categories [data-cid="1"] {
 	    border-top: 1px solid #656565;
+	}
+	ul.categories [data-cid="1"], ul.categories [data-cid="16"], ul.categories [data-cid="2"], ul.categories [data-cid="22"], ul.categories [data-cid="25"], ul.categories [data-cid="29"], ul.categories [data-cid="44"], ul.categories [data-cid="51"], ul.categories [data-cid="64"], ul.categories [data-cid="67"], ul.categories [data-cid="71"], ul.categories [data-cid="72"], ul.categories [data-cid="96"] {
+	    border-bottom: 1px solid #646464;
+	}
+
+	.h4, h4, label {
+	    color: whitesmoke;
 	}
 
 	.panel.panel-default {
