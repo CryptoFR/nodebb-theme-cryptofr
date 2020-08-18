@@ -9,7 +9,7 @@
 		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
 		{ "hook": "filter:topic.build", "method": "addUserToTopic" },
 		{ "hook": "filter:user.whitelistFields", "method": "getUserFields"},
-		{ "hook": "filter:category.topics.get", "method": "getCategoryHook"}
+		{ "hook": "filter:topics.get", "method": "getCategoryHook"}
 	],
 	"scripts": [
 		"lib/persona.js",
