@@ -1489,7 +1489,7 @@ body.dark {
 	}
 
 	.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover {
-	    background-color: #616163;
+	    background-color: #28283c;
 	}
 
 	.pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover {
@@ -1534,14 +1534,23 @@ body.dark {
 
 		&.btn-default {
 		    color: #f5f5f5;
-		    background-color: #717171;
-		    border-color: #717171;
+		    background-color: #393960;
+		    border-color: #393960;
 		    &:hover {
-		    	background-color: #8e8e8e;
-		    	border-color: #8e8e8e;
+		    	background-color: #3b3b58;
+		    	border-color: #3b3b58;
 		    	color: #fff;
 		    }
 		}
+	}
+
+	.topic-list li .content .tag-list .tag {
+	    color: #dbddea;
+	    background: #5b5b98;
+	    &:hover {
+	    	background: #8484c1;
+	    	color: white;
+	    }
 	}
 
 	.dropdown-menu {
@@ -1651,21 +1660,21 @@ body.dark {
 	.category-title {
 	    color: #ebeeff;
 	    border: 1px solid #3d3d63;
-	    background: #515156;
+	    background: #292a40;
 	    margin-bottom: -10px;
 	}
 
 	.subcategory .categories {
-		border-top: 1px solid #646464!important;
+		border-top: 1px solid #3d3d62!important;
 		>li {
-		    border-bottom: 1px solid #646464!important;
+		    border-bottom: 1px solid #3d3d62!important;
 		}
 	}
 
 	.modal-content {
-	    background-color: #404040;
+	    background-color: #2b2a3e;
 	    .modal-footer {
-		    border-top: 1px solid #777777;
+		    border-top: 1px solid #3d3d62;
 		}
 	}
 
@@ -1674,7 +1683,7 @@ body.dark {
 			.locked-icon {
 			    color: #ebeeff;
 			}
-			border-bottom: 1px solid #646464!important;
+			border-bottom: 1px solid #3d3d62!important;
 			&.pinned-topic {
 			    background: #30315c!important;
 			}
@@ -1719,8 +1728,8 @@ body.dark {
 		}
 
 	    h1 {
-		    border-bottom: 1px solid #828080;
-		    background: #4a4a4a;
+		    border-bottom: 1px solid #18182c;
+    		background: #292a40;
 		    .topic-title {
 			    color: #aeb6f9!important;
 			}
@@ -1760,13 +1769,14 @@ body.dark {
 		}
 
 		.post-wrapper {
+			border-bottom: 1px solid #3d3d62 !important;
 
 			[component="post/parent"] {
 		    	color: #545454 !important;
 			}
 
 			[component="post/replies"] li {
-	    		background: #313131!important;
+	    		background: #292a40!important;
 	    	}
 
 			.threaded-replies {
@@ -1819,18 +1829,28 @@ body.dark {
 		}
 
 		.post-bar {
-			border-top: 1px solid #828080;
-			background: #313131;
+			border-top: 1px solid #3d3d63;
+    		background: #24263e;
 			.stats {
 			    color: #b1baff;
 			}
+		}
+
+		.tags .tag-item {
+			color: #dbddea;
+		    background: #5b5b98;
+		    &:hover {
+		    	background: #8484c1;
+		    	color: white;
+		    }
 		}
 	}
 
 	ul.categories [data-cid="2"]:before, ul.categories [data-cid="25"]:before, ul.categories [data-cid="44"]:before, ul.categories [data-cid="71"]:before, ul.categories [data-cid="96"]:before {
 	    color: #ebeeff;
-    	border-right: 1px solid #3d3d63;
-    	background: #515156;
+	    border-right: 1px solid #3d3d62;
+	    background: #292a40;
+	    border-bottom: 1px solid #3d3d62;
 	}
 	ul.categories [data-cid="2"], ul.categories [data-cid="25"], ul.categories [data-cid="44"], ul.categories [data-cid="71"], ul.categories [data-cid="96"] {
 	    border-top: 1px solid #3d3d63;
@@ -1842,7 +1862,7 @@ body.dark {
 	    border-top: 1px solid #3d3d63;
 	}
 	ul.categories [data-cid="1"], ul.categories [data-cid="16"], ul.categories [data-cid="2"], ul.categories [data-cid="22"], ul.categories [data-cid="25"], ul.categories [data-cid="29"], ul.categories [data-cid="44"], ul.categories [data-cid="51"], ul.categories [data-cid="64"], ul.categories [data-cid="67"], ul.categories [data-cid="71"], ul.categories [data-cid="72"], ul.categories [data-cid="96"] {
-	    border-bottom: 1px solid #646464;
+	    border-bottom: 1px solid #3d3d62;
 	}
 
 	.h4, h4, label {
@@ -1854,21 +1874,27 @@ body.dark {
 	}
 
 	.composer {
-	    background: #525252;
+	    background: #2a2a3e;
+	    box-shadow: 0 6px 12px rgb(0 0 0 / 83%);
 	    .form-control {
-		    background: #525252;
+		    background: #2a2a3e;
 		    color: whitesmoke;
 		}
 		.write {
-		    border: 1px solid #696969;
-		    background: #272727;
+		    border: 1px solid #2e2e40;
+    		background: #171725;
+    		font-size: 14px;
 		}
 		.preview.well {
-		    background: #656464 !important;
-		    border: 1px solid #737373;
+		    background: #292a40!important;
+    		border: 1px solid #3d3d62;
+    		font-size: 14px;
 		}
 		.mobile-navbar {
 		    background: #525c96;
+		}
+		.formatting-bar .formatting-group li {
+		    color: #e8e9ea;
 		}
 	}
 
