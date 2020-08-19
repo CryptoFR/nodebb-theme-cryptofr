@@ -68,7 +68,7 @@
 			<h4>[[register:alternative_registration]]</h4>
 			<ul class="alt-logins">
 				{{{each authentication}}}
-				<li class="{authentication.name}"><a rel="nofollow noopener noreferrer" target="_top" href="{config.relative_path}{authentication.url}"><i class="fa {authentication.icon} fa-3x"></i></i></a></li>
+				<li class="{authentication.name}"><a rel="nofollow noopener noreferrer" target="_top" href="{config.relative_path}{authentication.url}"><i class="fab {authentication.icon} fa-3x"></i></i></a></li>
 				{{{end}}}
 			</ul>
 		</div>
