@@ -77,14 +77,14 @@
 		<li><a href="{config.relative_path}/user/{userslug}/downvoted">[[global:downvoted]]</a></li>
 		<!-- ENDIF !downvote:disabled -->
 		<!-- ENDIF !reputation:disabled -->
-		<li><a href="{config.relative_path}/user/{userslug}/uploads">[[global:uploads]]</a></li>
+		<li><a href="{config.relative_path}/user/{userslug}/uploads">Fichiers Téléchargés</a></li>
 		<!-- ENDIF showHidden -->
 
 		{{{each profile_links}}}
 		<!-- IF @first -->
 		<li role="separator" class="divider"></li>
 		<!-- ENDIF @first -->
-		<li id="{profile_links.id}" class="plugin-link <!-- IF profile_links.public -->public<!-- ELSE -->private<!-- ENDIF profile_links.public -->"><a href="{config.relative_path}/user/{userslug}/{profile_links.route}"><!-- IF ../icon --><i class="fa fa-fw {profile_links.icon}"></i> <!-- END -->{profile_links.name}</a></li>
+		<li id="{profile_links.id}" class="plugin-link <!-- IF profile_links.public -->public<!-- ELSE -->private<!-- ENDIF profile_links.public -->"><a href="{config.relative_path}/user/{userslug}/{profile_links.route}"><!-- IF ../icon --><i class="fas fa-fw {profile_links.icon}"></i> <!-- END -->{profile_links.name}</a></li>
 		{{{end}}}
 	</ul>
 </div>

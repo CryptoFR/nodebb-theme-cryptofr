@@ -10,7 +10,7 @@
 		<div class="col-sm-6">
 			<!-- IF gdpr_consent -->
 			<div class="alert alert-success">
-				<i class="fa fa-check pull-right fa-3x"></i>
+				<i class="fas fa-check pull-right fa-3x"></i>
 				[[user:consent.received]]
 			</div>
 			<!-- ELSE -->
@@ -33,7 +33,7 @@
 
 					<div class="text-center">
 						<a class="btn btn-default" href="./settings">
-							<i class="fa fa-cog"></i>
+							<i class="fad fa-user-cog"></i>
 							[[pages:account/settings]]
 						</a>
 					</div>
@@ -54,13 +54,13 @@
 
 					<div class="btn-group-vertical btn-block">
 						<a data-action="export-profile" class="btn btn-default">
-							<i class="fa fa-download"></i> [[user:consent.export_profile]]
+							<i class="fad fa-download"></i> [[user:consent.export_profile]]
 						</a>
 						<a data-action="export-posts" class="btn btn-default">
-							<i class="fa fa-download"></i> [[user:consent.export_posts]]
+							<i class="fad fa-download"></i> [[user:consent.export_posts]]
 						</a>
 						<a data-action="export-uploads" class="btn btn-default">
-							<i class="fa fa-download"></i> [[user:consent.export_uploads]]
+							<i class="fad fa-download"></i> [[user:consent.export_uploads]]
 						</a>
 					</div>
 				</div>
