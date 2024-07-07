@@ -5,29 +5,31 @@
 		<!-- IMPORT partials/flags/filters.tpl -->
 	</div>
 	<div class="col-sm-8 col-md-9">
-		<div class="text-center">
-			<div class="panel panel-default">
-				<div class="panel-body collapse" id="flags-daily-wrapper" aria-expanded="false">
-					<div><canvas id="flags:daily" height="250"></canvas></div>
-					<p>
-
-					</p>
-				</div>
-				<div class="panel-footer" aria-controls="#flags-daily-wrapper"><small>[[flags:graph-label]]</small>&nbsp;<span class="caret"></span></div>
-			</div>
-		</div>
-
 		<!-- IF hasFilter -->
 		<div class="alert alert-warning">
-			<p class="pull-right">
-				<a href="{config.relative_path}/flags?reset=1">[[flags:filter-reset]]</a>
+			<p class="float-end">
+				<a href="{config.relative_path}/flags">[[flags:filter-reset]]</a>
 			</p>
 			[[flags:filter-active]]
 		</div>
 		<!-- ENDIF hasFilter -->
+
+		<div class="btn-group float-end" component="flags/bulk-actions">
+			<button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" autocomplete="off" aria-haspopup="true" aria-expanded="false" disabled="disabled">
+				<i class="fa fa-clone"></i> [[flags:bulk-actions]] <span class="caret"></span>
+			</button>
+			<ul class="dropdown-menu" role="menu">
+				<li><a href="#" class="dropdown-item" data-action="bulk-assign" role="menuitem">[[flags:assign-to-me]]</a></li>
+				<li><a href="#" class="dropdown-item" data-action="bulk-mark-resolved" role="menuitem">[[flags:bulk-resolve]]</a></li>
+			</ul>
+		</div>
+
 		<table class="table table-striped table-hover" component="flags/list">
 			<thead>
 				<tr>
+					<th>
+						<input type="checkbox" data-action="toggle-all" autocomplete="off" />
+					</th>
 					<th></th>
 					<th><span class="hidden-xs">[[flags:reports]] </span><i class="fa fa-user-plus"></i></th>
 					<th><span class="hidden-xs">[[flags:first-reported]] </span><i class="fa fa-clock-o"></i></th>
@@ -37,7 +39,7 @@
 			<tbody>
 				<!-- IF !flags.length -->
 				<tr>
-					<td colspan="4">
+					<td colspan="5">
 						<div class="alert alert-success text-center">
 							[[flags:no-flags]]
 						</div>
@@ -47,6 +49,9 @@
 				{{{each flags}}}
 				<tr data-flag-id="{../flagId}">
 					<td>
+						<input type="checkbox" autocomplete="off" />
+					</td>
+					<td>
 						<a href="{config.relative_path}/flags/{../flagId}">
 							<strong>{../target_readable}</strong>
 						</a>
@@ -55,7 +60,7 @@
 						{./heat}
 					</td>
 					<td><span class="timeago" title="{../datetimeISO}"></span></td>
-					<td><span class="label label-{../labelClass}">[[flags:state-{../state}]]</span></td>
+					<td><span class="badge bg-{../labelClass}">[[flags:state-{../state}]]</span></td>
 				</tr>
 				{{{end}}}
 			</tbody>

@@ -1,8 +1,12 @@
-<div class="stats hidden-xs">
-	<span component="topic/post-count" class="human-readable-number" title="{postcount}">{postcount}</span><br />
-	<small>[[global:posts]]</small>
+<div class="stats text-muted">
+	<i class="fa fa-fw fa-user" title="[[global:posters]]"></i>
+	<span title="{postercount}">{humanReadableNumber(postercount)}</span>
 </div>
-<div class="stats hidden-xs">
-	<span class="human-readable-number" title="{viewcount}">{viewcount}</span><br />
-	<small>[[global:views]]</small>
+<div class="stats text-muted">
+	<i class="fa fa-fw fa-pencil" title="[[global:posts]]"></i>
+	<span component="topic/post-count" title="{postcount}">{humanReadableNumber(postcount)}</span>
+</div>
+<div class="stats text-muted">
+	<i class="fa fa-fw fa-eye" title="[[global:views]]"></i>
+	<span title="{viewcount}">{humanReadableNumber(viewcount)}</span>
 </div>

@@ -2,7 +2,7 @@
 	</main>
 	<footer id="footer" class="container footer" style="margin-left: -30px;">
 		<div class="copyright">
-			<i class="fab fa-creative-commons"></i> 2014 - 2020 - <a target="_blank" href="https://twitter.com/CryptoFR">CryptoFR</a> <span class="hidden-xs">| Framework by <a target="_blank" href="https://community.nodebb.org/">NodeBB</a></span> | <a target="_blank" href="https://cryptofr.com/legal">Mentions Légales</a> 
+			<i class="fab fa-creative-commons"></i> 2014 - 2024 - <a target="_blank" href="https://twitter.com/CryptoFR">CryptoFR</a> <span class="hidden-xs">| Framework by <a target="_blank" href="https://community.nodebb.org/">NodeBB</a></span> | <a target="_blank" href="https://cryptofr.com/legal">Mentions Légales</a> 
 		</div>
 	</footer>
 	<!-- IF !isSpider -->
@@ -15,32 +15,10 @@
 	</div>
 
 	<div component="toaster/tray" class="alert-window">
-		<div id="reconnect-alert" class="alert alert-dismissable alert-warning clearfix hide" component="toaster/toast">
-			<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-			<p>[[global:reconnecting-message, {config.siteTitle}]]</p>
-		</div>
+		<!-- IMPORT partials/reconnect-alert.tpl -->
 	</div>
-	<!-- ENDIF !isSpider -->
-
-
-	<script defer src="{relative_path}/assets/nodebb.min.js?{config.cache-buster}"></script>
-
-	{{{each scripts}}}
-	<script defer type="text/javascript" src="{scripts.src}"></script>
-	{{{end}}}
-
-	<script>
-		window.addEventListener('DOMContentLoaded', function () {
-			require(['forum/footer']);
-
-			<!-- IF useCustomJS -->
-			{{customJS}}
-			<!-- ENDIF useCustomJS -->
-		});
-	</script>
-
-	<div class="hide">
-	<!-- IMPORT 500-embed.tpl -->
-	</div>
+	{{{ end }}}
+	<!-- IMPORT modules/taskbar.tpl -->
+	<!-- IMPORT partials/footer/js.tpl -->
 </body>
 </html>

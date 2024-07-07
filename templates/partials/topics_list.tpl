@@ -1,8 +1,11 @@
 <ul component="category" class="topic-list" itemscope itemtype="http://www.schema.org/ItemList" data-nextstart="{nextStart}" data-set="{set}">
-	<meta itemprop="itemListOrder" content="descending">
 	{{{each topics}}}
 	<li component="category/topic" class="row clearfix category-item {function.generateTopicClass} <!-- IF topics.pinned -->pinned-topic<!-- ENDIF topics.pinned -->" <!-- IMPORT partials/data/category.tpl -->>
-		<meta itemprop="name" content="{function.stripTags, title}">
+		<link itemprop="url" content="{config.relative_path}/topic/{../slug}" />
+		<meta itemprop="name" content="{function.stripTags, ../title}" />
+		<meta itemprop="itemListOrder" content="descending" />
+		<meta itemprop="position" content="{increment(./index, "1")}" />
+		<a id="{../index}" data-index="{../index}" component="topic/anchor"></a>
 
 		<div class="col-md-1 col-xs-2 stats stats-votes">
 			<span class="voting <!-- IF topics.pinned -->hide<!-- ENDIF topics.pinned -->" title="{topics.votes}">
@@ -19,69 +22,78 @@
 			<span class="pinned <!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="{topics.votes}"><i class="fad fa-thumbtack"></i></span>
 		</div>
 
-		<div class="col-md-6 col-sm-9 col-xs-7 content">
-			<div class="avatar pull-left">
+		<div class="col-md-6 col-sm-9 col-7 content">
+			<div class="avatar float-start me-2">
 				<!-- IF showSelect -->
 				<div class="select" component="topic/select">
-					<!-- IF topics.thumb -->
-					<img src="{topics.thumb}" class="user-img not-responsive" />
-					<!-- ELSE -->
-					{buildAvatar(topics.user, "46", true, "not-responsive")}
-					<!-- ENDIF topics.thumb -->
-					<i class="fad fa-check"></i>
+					{{{ if ./thumbs.length }}}
+					<img src="{./thumbs.0.url}" class="user-img not-responsive" />
+					{{{ else }}}
+					{buildAvatar(../user, "48px", true, "not-responsive")}
+					{{{ end }}}
+					<i class="fa fa-check"></i>
 				</div>
 				<!-- ENDIF showSelect -->
 
 				<!-- IF !showSelect -->
-				<a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->" class="pull-left">
-					<!-- IF topics.thumb -->
-					<img src="{topics.thumb}" class="user-img not-responsive" />
-					<!-- ELSE -->
-					{buildAvatar(topics.user, "46", true, "not-responsive")}
-					<!-- ENDIF topics.thumb -->
+				<a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->" class="float-start">
+					{{{ if ./thumbs.length }}}
+					<img src="{./thumbs.0.url}" class="user-img not-responsive" />
+					{{{ else }}}
+					{buildAvatar(../user, "48px", true, "not-responsive")}
+					{{{ end }}}
 				</a>
 				<!-- ENDIF !showSelect -->
 			</div>
 
-			<h2 component="topic/header" class="title">
-				<i component="topic/pinned" class="<!-- IF !topics.pinned -->hide<!-- ENDIF !topics.pinned -->" title="[[topic:pinned]]"></i>
-				<i component="topic/locked" class="fad locked-icon fa-lock <!-- IF !topics.locked -->hide<!-- ENDIF !topics.locked -->" title="[[topic:locked]]"></i>
-				<i component="topic/moved" class="fad moved-icon fa-arrow-alt-circle-right <!-- IF !topics.oldCid -->hide<!-- ENDIF !topics.oldCid -->" title="[[topic:moved]]"></i>
-				{{{each icons}}}@value{{{end}}}
+			<h2 component="topic/header" class="title mb-1">
+				<i component="topic/watched" class="fa fa-bell-o {{{ if !topics.followed }}}hidden{{{ end }}}" title="[[topic:watching]]"></i>
+				<i component="topic/watched" class="fa fa-eye-slash {{{ if !topics.ignored }}}hidden{{{ end }}}" title="[[topic:ignoring]]"></i>
+				<i component="topic/scheduled" class="fa fa-clock-o {{{ if !topics.scheduled }}}hidden{{{ end }}}" title="[[topic:scheduled]]"></i>
+				<i component="topic/pinned" class="fa fa-thumb-tack {{{ if (topics.scheduled || !topics.pinned) }}}hidden{{{ end }}}" title="{{{ if !../pinExpiry }}}[[topic:pinned]]{{{ else }}}[[topic:pinned-with-expiry, {../pinExpiryISO}]]{{{ end }}}"></i>
+				<i component="topic/locked" class="fa fa-lock {{{ if !topics.locked }}}hidden{{{ end }}}" title="[[topic:locked]]"></i>
+				<i component="topic/moved" class="fa fa-arrow-circle-right {{{ if !topics.oldCid }}}hidden{{{ end }}}" title="[[topic:moved]]"></i>
+				{{{each topics.icons}}}{@value}{{{end}}}
 
-				<!-- IF !topics.noAnchor -->
-				<a href="{config.relative_path}/topic/{topics.slug}<!-- IF topics.bookmark -->/{topics.bookmark}<!-- ENDIF topics.bookmark -->" class="topic-title" itemprop="url">{topics.title}</a><br />
-				<!-- ELSE -->
-				<span class="topic-title">{topics.title}</span><br />
-				<!-- ENDIF !topics.noAnchor -->
-
+				{{{ if topics.noAnchor }}}
+				<span>{./title}</span>
+				{{{ else }}}
+				<a href="{config.relative_path}/topic/{./slug}{{{ if ./bookmark }}}/{./bookmark}{{{ end }}}">{./title}</a>
+				{{{ end }}}
+			</h2>
+			<div class="info">
 				<!-- IF !template.category -->
-				<small>
-					<a href="{config.relative_path}/category/{topics.category.slug}"><span class="fa-stack fa-lg" style="{function.generateCategoryBackground, topics.category}"><i style="color:{topics.category.color};" class="fa {topics.category.icon} fa-stack-1x"></i></span> {topics.category.name}</a> &bull;
-				</small>
+				<div class="category-item d-inline-block">
+					{buildCategoryIcon(./category, "24px", "rounded-circle")}
+					<a class="text-muted" href="{config.relative_path}/category/{topics.category.slug}">{topics.category.name}</a>
+				</div>
+				&bull;
 				<!-- ENDIF !template.category -->
 
-				<!-- IF topics.tags.length -->
-				<span class="tag-list">
-					{{{each topics.tags}}}
-					<a href="{config.relative_path}/tags/{topics.tags.valueEscaped}"><span class="tag" style="<!-- IF topics.tags.color -->color: {topics.tags.color};<!-- ENDIF topics.tags.color --><!-- IF topics.tags.bgColor -->background-color: {topics.tags.bgColor};<!-- ENDIF topics.tags.bgColor -->">{topics.tags.valueEscaped}</span></a>
-					{{{end}}}
-					<small class="hidden-xs">&bull;</small>
-				</span>
-				<!-- ENDIF topics.tags.length -->
 
-				<span class="postcount visible-xs">
-					<i class="fad fa-comment-alt"></i>
-					<span class="human-readable-number" title="{topics.postcount}">{topics.postcount}</span>
+				<span data-tid="{./tid}" component="topic/tags" class="tag-list hidden-xs {{{ if !./tags.length }}}hidden{{{ end}}}">
+					{{{ each ./tags }}}
+					<!-- IMPORT partials/topic/tag.tpl -->
+					{{{ end }}}
+					&bull;
 				</span>
 
-				<small class="hidden-xs"><span class="timeago" title="{topics.timestampISO}"></span> &bull; <a href="<!-- IF topics.user.userslug -->{config.relative_path}/user/{topics.user.userslug}<!-- ELSE -->#<!-- ENDIF topics.user.userslug -->">{topics.user.username}</a></small>
-			</h2>
+				<span class="hidden-xs"><span class="timeago text-muted" title="{./timestampISO}"></span> &bull; <a class="text-muted" href="{{{ if ./user.userslug }}}{config.relative_path}/user/{./user.userslug}{{{ else }}}#{{{ end }}}">{./user.displayname}</a></span>
+
+				<span class="visible-xs-inline timeago text-muted" title="{{{ if ./teaser.timestampISO }}}{./teaser.timestampISO}{{{ else }}}{./timestampISO}{{{ end }}}"></span>
+			</div>
 		</div>
 
-		<!-- <div class="mobile-stat col-xs-2 visible-xs text-right">
-			<span class="human-readable-number">{topics.postcount}</span> <a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"><i class="fa fa-arrow-circle-right"></i></a>
-		</div> -->
+		<div class="mobile-stat col-2 visible-xs text-end">
+			<span>{humanReadableNumber(topics.postcount)}</span> <a href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"><i class="fa fa-arrow-circle-right"></i></a>
+		</div>
+
+		<div class="col-md-1 hidden-sm hidden-xs stats stats-votes">
+			<!-- IF !reputation:disabled -->
+			<span title="{topics.votes}">{humanReadableNumber(topics.votes)}</span><br />
+			<small>[[global:votes]]</small>
+			<!-- END -->
+		</div>
 
 		<div class="col-md-1 hidden-sm hidden-xs stats stats-postcount">
 			<span class="stats-viewcount">
@@ -94,11 +106,17 @@
 			</span>
 		</div>
 
-		<div class="col-md-4 col-sm-3 teaser col-xs-4" component="topic/teaser">
-			<div class="card" style="border-color: {topics.category.bgColor}">
+		<div class="col-md-1 hidden-sm hidden-xs stats stats-viewcount">
+			<span title="{topics.viewcount}">{humanReadableNumber(topics.viewcount)}</span><br />
+			<small>[[global:views]]</small>
+		</div>
+
+		<div class="col-md-3 col-sm-3 teaser hidden-xs" component="topic/teaser">
+			<div class="lastpost background-link-container" style="border-color: {topics.category.bgColor}">
+				<a class="background-link" href="{config.relative_path}/topic/{topics.slug}/{topics.teaser.index}"></a>
 				<!-- IF topics.unreplied -->
 				<p>
-					[[category:no_replies]]
+					[[category:no-replies]]
 				</p>
 				<!-- ELSE -->
 				<!-- IF topics.teaser.pid -->

@@ -1,81 +1,115 @@
-<!-- IMPORT partials/breadcrumbs.tpl -->
 <div data-widget-area="header">
 	{{{each widgets.header}}}
 	{{widgets.header.html}}
 	{{{end}}}
 </div>
-<div class="row">
-	<div class="topic <!-- IF widgets.sidebar.length -->col-lg-9 col-sm-12<!-- ELSE -->col-lg-12<!-- ENDIF widgets.sidebar.length -->">
-
-		<h1 component="post/header" itemprop="name">
-			<span class="topic-title" component="topic/title">
-				<i class="fad fa-thumbtack <!-- IF !pinned -->hidden<!-- ENDIF !pinned -->" title="[[topic:pinned]]"></i>
-				<i class="fad fa-lock <!-- IF !locked -->hidden<!-- ENDIF !locked -->" title="[[topic:locked]]"></i>
-				<i class="fad fa-arrow-circle-right <!-- IF !oldCid -->hidden<!-- ENDIF !oldCid -->" title="[[topic:moved]]"></i>
-				{{{each icons}}}@value{{{end}}}
-
-				{title}
-			</span>
-		</h1>
-
-		<!-- IF merger -->
-		<div component="topic/merged/message" class="alert alert-warning clearfix">
-			<span class="pull-left">[[topic:merged_message, {config.relative_path}/topic/{mergeIntoTid}, {merger.mergedIntoTitle}]]</span>
-			<span class="pull-right">
-				<a href="{config.relative_path}/user/{merger.userslug}">
-					<strong>{merger.username}</strong>
-				</a>
-				<small class="timeago" title="{mergedTimestampISO}"></small>
-			</span>
+<div class="row mb-5">
+	<div class="topic {{{ if widgets.sidebar.length }}}col-lg-9 col-sm-12{{{ else }}}col-lg-12{{{ end }}}" itemid="{url}" itemscope itemtype="https://schema.org/DiscussionForumPosting">
+		<meta itemprop="headline" content="{escape(titleRaw)}">
+		<meta itemprop="text" content="{escape(titleRaw)}">
+		<meta itemprop="url" content="{url}">
+		<meta itemprop="datePublished" content="{timestampISO}">
+		<meta itemprop="dateModified" content="{lastposttimeISO}">
+		<div itemprop="author" itemscope itemtype="https://schema.org/Person">
+			<meta itemprop="name" content="{author.username}">
+			{{{ if author.userslug }}}<meta itemprop="url" content="{config.relative_path}/user/{author.userslug}">{{{ end }}}
 		</div>
-		<!-- ENDIF merger -->
 
+		<div class="topic-header sticky-top mb-3">
+			<h1 component="post/header" itemprop="name">
+				<div class="topic-title d-flex">
+					<span class="fs-3" component="topic/title">{title}</span>
+				</div>
+			</h1>
+
+			<div class="topic-info pb-2 d-flex gap-3 align-items-center flex-wrap">
+				<span component="topic/labels" class="d-flex text-md gap-2 {{{ if (!scheduled && (!pinned && (!locked && (!oldCid && !icons.length)))) }}}hidden{{{ end }}}">
+					<span component="topic/scheduled" class="badge badge border border-gray-300 text-body {{{ if !scheduled }}}hidden{{{ end }}}">
+						<i class="fa fa-clock-o"></i> [[topic:scheduled]]
+					</span>
+					<span component="topic/pinned" class="badge badge border border-gray-300 text-body {{{ if (scheduled || !pinned) }}}hidden{{{ end }}}">
+						<i class="fa fa-thumb-tack"></i> {{{ if !pinExpiry }}}[[topic:pinned]]{{{ else }}}[[topic:pinned-with-expiry, {isoTimeToLocaleString(./pinExpiryISO, config.userLang)}]]{{{ end }}}
+					</span>
+					<span component="topic/locked" class="badge badge border border-gray-300 text-body {{{ if !locked }}}hidden{{{ end }}}">
+						<i class="fa fa-lock"></i> [[topic:locked]]
+					</span>
+					<a component="topic/moved" href="{config.relative_path}/category/{oldCid}" class="badge badge border border-gray-300 text-body text-decoration-none {{{ if !oldCid }}}hidden{{{ end }}}">
+						<i class="fa fa-arrow-circle-right"></i> {{{ if privileges.isAdminOrMod }}}[[topic:moved-from, {oldCategory.name}]]{{{ else }}}[[topic:moved]]{{{ end }}}
+					</a>
+					{{{each icons}}}<span class="lh-1">{@value}</span>{{{end}}}
+				</span>
+
+				<div class="category-item d-inline-block">
+					{buildCategoryIcon(category, "24px", "rounded-circle")}
+					<a href="{config.relative_path}/category/{category.slug}">{category.name}</a>
+				</div>
+
+				<div data-tid="{./tid}" component="topic/tags" class="tags tag-list d-inline-block hidden-xs hidden-empty"><!-- IMPORT partials/topic/tags.tpl --></div>
+				<div class="d-inline-block hidden-xs">
+					<!-- IMPORT partials/topic/stats.tpl -->
+				</div>
+				{{{ if !feeds:disableRSS }}}
+				{{{ if rssFeedUrl }}}<a class="hidden-xs" target="_blank" href="{rssFeedUrl}"><i class="fa fa-rss-square"></i></a>{{{ end }}}
+				{{{ end }}}
+				{{{ if browsingUsers }}}
+				<div class="d-inline-block hidden-xs">
+				<!-- IMPORT partials/topic/browsing-users.tpl -->
+				</div>
+				{{{ end }}}
+				<div class="ms-auto">
+					<!-- IMPORT partials/post_bar.tpl -->
+				</div>
+			</div>
+		</div>
+		{{{ if merger }}}
+		<!-- IMPORT partials/topic/merged-message.tpl -->
+		{{{ end }}}
+
+		{{{ if forker }}}
+		<!-- IMPORT partials/topic/forked-message.tpl -->
+		{{{ end }}}
+
+
+		{{{ if !scheduled }}}
 		<!-- IMPORT partials/topic/deleted-message.tpl -->
+		{{{ end }}}
 
-		<ul component="topic" class="posts" data-tid="{tid}" data-cid="{cid}">
+		<ul component="topic" class="posts timeline" data-tid="{tid}" data-cid="{cid}">
 			{{{each posts}}}
-				<li component="post" class="<!-- IF !posts.index -->first-post<!-- ENDIF !posts.index --> post-wrapper <!-- IF posts.deleted -->deleted<!-- ENDIF posts.deleted -->" <!-- IMPORT partials/data/topic.tpl -->>
-					<a component="post/anchor" data-index="{posts.index}" id="{posts.index}"></a>
+				<li component="post" class="{{{ if posts.deleted }}}deleted{{{ end }}} {{{ if posts.selfPost }}}self-post{{{ end }}} {{{ if posts.topicOwnerPost }}}topic-owner-post{{{ end }}}" <!-- IMPORT partials/data/topic.tpl -->>
+					<a component="post/anchor" data-index="{./index}" id="{increment(./index, "1")}"></a>
 
 					<meta itemprop="datePublished" content="{posts.timestampISO}">
 					<meta itemprop="dateModified" content="{posts.editedISO}">
 
 					<!-- IMPORT partials/topic/post.tpl -->
-					<!-- IF !posts.index -->
-					<div class="post-bar-placeholder"></div>
-					<!-- ENDIF !posts.index -->
 				</li>
+				{{{ if (config.topicPostSort != "most_votes") }}}
+				{{{ each ./events}}}
+				<!-- IMPORT partials/topic/event.tpl -->
+				{{{ end }}}
+				{{{ end }}}
 			{{{end}}}
 		</ul>
 
-		<!-- IF config.enableQuickReply -->
+		{{{ if browsingUsers }}}
+		<div class="visible-xs">
+			<!-- IMPORT partials/topic/browsing-users.tpl -->
+			<hr/>
+		</div>
+		{{{ end }}}
+
+		{{{ if config.enableQuickReply }}}
 		<!-- IMPORT partials/topic/quickreply.tpl -->
-		<!-- ENDIF config.enableQuickReply -->
+		{{{ end }}}
 
-		<div class="post-bar">
-			<!-- IMPORT partials/post_bar.tpl -->
-		</div>
-
-		<!-- IF config.usePagination -->
+		{{{ if config.usePagination }}}
 		<!-- IMPORT partials/paginator.tpl -->
-		<!-- ENDIF config.usePagination -->
+		{{{ end }}}
 
-		<div class="navigator-thumb text-center hidden">
-			<strong class="text"></strong><br/>
-			<span class="time"></span>
-		</div>
-		<div class="visible-xs visible-sm pagination-block text-center">
-			<div class="progress-bar"></div>
-			<div class="wrapper">
-				<i class="fad fa-2x fa-angle-double-up fa-fw pointer pagetop"></i>
-				<i class="fas fa-2x fa-angle-up pointer fa-fw pageup"></i>
-				<span class="pagination-text"></span>
-				<i class="fas fa-2x fa-angle-down pointer fa-fw pagedown"></i>
-				<i class="fad fa-2x fa-angle-double-down pointer fa-fw pagebottom"></i>
-			</div>
-		</div>
+		<!-- IMPORT partials/topic/navigator.tpl -->
 	</div>
-	<div data-widget-area="sidebar" class="col-lg-3 col-sm-12 <!-- IF !widgets.sidebar.length -->hidden<!-- ENDIF !widgets.sidebar.length -->">
+	<div data-widget-area="sidebar" class="col-lg-3 col-sm-12 {{{ if !widgets.sidebar.length }}}hidden{{{ end }}}">
 		{{{each widgets.sidebar}}}
 		{{widgets.sidebar.html}}
 		{{{end}}}
@@ -88,8 +122,8 @@
 	{{{end}}}
 </div>
 
-<!-- IF !config.usePagination -->
+{{{ if !config.usePagination }}}
 <noscript>
-	<!-- IMPORT partials/paginator.tpl -->
+<!-- IMPORT partials/paginator.tpl -->
 </noscript>
-<!-- ENDIF !config.usePagination -->
+{{{ end }}}

@@ -15,8 +15,11 @@ socket.cryptofrv2.saveTheme = async function(socket, data, callback) {
 	await db.setObjectField(`user:${socket.uid}`, 'theme', data.theme);
 	socket.emit('plugins.cryptofrv2.themeSaved', { theme: data.theme });
 };
+const meta = require.main.require('./src/meta');
 
-var library = {};
+const controllers = require('./lib/controllers');
+
+const library = module.exports;
 
 library.getUserFields = async function (data) {
 	data.whitelist = [...data.whitelist, 'theme'];
@@ -57,77 +60,84 @@ library.init = function(params, callback) {
 	app.post('/cryptofrv2/downvote', downvotePost);
 
 	callback();
+library.init = async function (params) {
+	const { router, middleware } = params;
+	const routeHelpers = require.main.require('./src/routes/helpers');
+	routeHelpers.setupAdminPageRoute(router, '/admin/plugins/persona', [], controllers.renderAdminPage);
+
+	routeHelpers.setupPageRoute(router, '/user/:userslug/theme', [
+		middleware.exposeUid,
+		middleware.ensureLoggedIn,
+		middleware.canViewUsers,
+		middleware.checkAccountPermissions,
+	], controllers.renderThemeSettings);
 };
 
-library.addAdminNavigation = function(header, callback) {
+library.addAdminNavigation = async function (header) {
 	header.plugins.push({
 		route: '/plugins/persona',
 		icon: 'fa-paint-brush',
-		name: 'Persona Theme'
+		name: 'Persona Theme',
 	});
-
-	callback(null, header);
+	return header;
 };
 
-library.getTeasers = function(data, callback) {
-	data.teasers.forEach(function(teaser) {
-		if (teaser && teaser.content) {
-			teaser.content = striptags(teaser.content, ['img']);
-		}
+library.addProfileItem = async (data) => {
+	data.links.push({
+		id: 'theme',
+		route: 'theme',
+		icon: 'fa-paint-brush',
+		name: '[[themes/persona:settings.title]]',
+		visibility: {
+			self: true,
+			other: false,
+			moderator: false,
+			globalMod: false,
+			admin: false,
+		},
 	});
-	callback(null, data);
+
+	return data;
 };
 
-library.defineWidgetAreas = function(areas, callback) {
+library.defineWidgetAreas = async function (areas) {
+	const locations = ['header', 'sidebar', 'footer'];
+	const templates = [
+		'categories.tpl', 'category.tpl', 'topic.tpl', 'users.tpl',
+		'unread.tpl', 'recent.tpl', 'popular.tpl', 'top.tpl', 'tags.tpl', 'tag.tpl',
+		'login.tpl', 'register.tpl',
+	];
+	function capitalizeFirst(str) {
+		return str.charAt(0).toUpperCase() + str.slice(1);
+	}
+	templates.forEach((template) => {
+		locations.forEach((location) => {
+			areas.push({
+				name: `${capitalizeFirst(template.split('.')[0])} ${capitalizeFirst(location)}`,
+				template: template,
+				location: location,
+			});
+		});
+	});
+
 	areas = areas.concat([
 		{
-			name: "Categories Sidebar",
-			template: "categories.tpl",
-			location: "sidebar"
+			name: 'Main post header',
+			template: 'topic.tpl',
+			location: 'mainpost-header',
 		},
 		{
-			name: "Category Sidebar",
-			template: "category.tpl",
-			location: "sidebar"
+			name: 'Main post footer',
+			template: 'topic.tpl',
+			location: 'mainpost-footer',
 		},
 		{
-			name: "Topic Sidebar",
-			template: "topic.tpl",
-			location: "sidebar"
+			name: 'Account Header',
+			template: 'account/profile.tpl',
+			location: 'header',
 		},
-		{
-			name: "Categories Header",
-			template: "categories.tpl",
-			location: "header"
-		},
-		{
-			name: "Category Header",
-			template: "category.tpl",
-			location: "header"
-		},
-		{
-			name: "Topic Header",
-			template: "topic.tpl",
-			location: "header"
-		},
-		{
-			name: "Categories Footer",
-			template: "categories.tpl",
-			location: "footer"
-		},
-		{
-			name: "Category Footer",
-			template: "category.tpl",
-			location: "footer"
-		},
-		{
-			name: "Topic Footer",
-			template: "topic.tpl",
-			location: "footer"
-		}
 	]);
-
-	callback(null, areas);
+	return areas;
 };
 
 library.getThemeConfig = function(config, callback) {
@@ -182,3 +192,12 @@ library.getCategoryHook = async function(data) {
 }
 
 module.exports = library;
+library.getThemeConfig = async function (config) {
+	const settings = await meta.settings.get('persona');
+	config.hideSubCategories = settings.hideSubCategories === 'on';
+	config.hideCategoryLastPost = settings.hideCategoryLastPost === 'on';
+	config.enableQuickReply = settings.enableQuickReply === 'on';
+	return config;
+};
+
+

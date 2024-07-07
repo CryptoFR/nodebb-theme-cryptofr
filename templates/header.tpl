@@ -1,31 +1,31 @@
 <!DOCTYPE html>
-<html lang="{function.localeToHTML, userLang, defaultLang}" <!-- IF languageDirection -->data-dir="{languageDirection}" style="direction: {languageDirection};" <!-- ENDIF languageDirection --> >
+<html lang="{function.localeToHTML, userLang, defaultLang}" {{{if languageDirection}}}data-dir="{languageDirection}" style="direction: {languageDirection};"{{{end}}}>
 <head>
 	<title>{browserTitle}</title>
 	{{{each metaTags}}}{function.buildMetaTag}{{{end}}}
-	<link rel="stylesheet" type="text/css" href="{relative_path}/assets/client<!-- IF bootswatchSkin -->-{bootswatchSkin}<!-- END -->.css?{config.cache-buster}" />
+	<link rel="stylesheet" type="text/css" href="{relative_path}/assets/client{{{if bootswatchSkin}}}-{bootswatchSkin}{{{end}}}{{{ if (languageDirection=="rtl") }}}-rtl{{{ end }}}.css?{config.cache-buster}" />
 	{{{each linkTags}}}{function.buildLinkTag}{{{end}}}
 
 	<script>
-		var RELATIVE_PATH = "{relative_path}";
 		var config = JSON.parse('{{configJSON}}');
 		var app = {
-			template: "{template.name}",
 			user: JSON.parse('{{userJSON}}')
 		};
+
+		document.documentElement.style.setProperty('--panel-offset', `${localStorage.getItem('panelOffset') || 0}px`);
 	</script>
 
-	<!-- IF useCustomHTML -->
+	{{{if useCustomHTML}}}
 	{{customHTML}}
-	<!-- END -->
-	<!-- IF useCustomCSS -->
+	{{{end}}}
+	{{{if useCustomCSS}}}
 	<style>{{customCSS}}</style>
 	<!-- END -->
 	<link rel="stylesheet" type="text/css" href="{relative_path}/assets/vendor/fontawesome-pro/css/all.css" />
 	
 </head>
 
-<body class="{bodyClass} skin-<!-- IF bootswatchSkin -->{bootswatchSkin}<!-- ELSE -->noskin<!-- END --> <!-- IF user.theme -->{user.theme}<!-- ELSE -->light<!-- END -->">
+<body class="{bodyClass} skin-{{{if bootswatchSkin}}}{bootswatchSkin}{{{else}}}noskin{{{end}}}">
 	<nav id="menu" class="slideout-menu hidden">
 		<!-- IMPORT partials/slideout-menu.tpl -->
 	</nav>
@@ -34,10 +34,16 @@
 	</nav>
 
 	<main id="panel" class="slideout-panel">
-		<nav class="navbar navbar-default navbar-fixed-top header" id="header-menu" component="navbar">
-			<div class="container">
+		<nav class="navbar sticky-top navbar-expand-lg bg-light header border-bottom py-0" id="header-menu" component="navbar">
+			<div class="container justify-content-start flex-nowrap">
 				<!-- IMPORT partials/menu.tpl -->
 			</div>
 		</nav>
-		<div class="container" id="content">
+		<script>
+			const rect = document.getElementById('header-menu').getBoundingClientRect();
+			const offset = Math.max(0, rect.bottom);
+			document.documentElement.style.setProperty('--panel-offset', offset + `px`);
+		</script>
+		<div class="container pt-3" id="content">
 		<!-- IMPORT partials/noscript/warning.tpl -->
+		<!-- IMPORT partials/noscript/message.tpl -->

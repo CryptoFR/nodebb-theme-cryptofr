@@ -2,20 +2,17 @@
 	"id": "nodebb-theme-cryptofr",
 	"library": "library.js",
 	"hooks": [
-		{ "hook": "filter:teasers.get", "method": "getTeasers" },
 		{ "hook": "filter:widgets.getAreas", "method": "defineWidgetAreas" },
 		{ "hook": "filter:config.get", "method": "getThemeConfig" },
 		{ "hook": "static:app.load", "method": "init" },
 		{ "hook": "filter:admin.header.build", "method": "addAdminNavigation" },
-		{ "hook": "filter:topic.build", "method": "addUserToTopic" },
+		{ "hook": "filter:user.profileMenu", "method": "addProfileItem" },
 		{ "hook": "filter:user.whitelistFields", "method": "getUserFields"},
 		{ "hook": "filter:category.topics.get", "method": "getCategoryHook"}
 	],
 	"scripts": [
-		"lib/persona.js",
-		"lib/modules/nprogress.js",
-		"lib/modules/autohidingnavbar.min.js",
-		"lib/modules/quickreply.js",
+		"public/modules/autohidingnavbar.js",
+		"public/persona.js",
 		"lib/modules/switchTheme.js",
 		"lib/vote.js"
 	],
@@ -23,7 +20,10 @@
 		"img": "public/img"
 	},
 	"modules": {
-		"pulling.js": "node_modules/pulling/build/pulling-drawer.js"
+		"../admin/plugins/persona.js": "public/admin.js",
+		"persona/taskbar.js": "public/modules/taskbar.js",
+		"persona/mobile-menu.js": "public/modules/mobile-menu.js",
+		"../client/account/theme.js": "public/settings.js"
 	},
 	"acpScripts": [
 		"lib/admin.js"
